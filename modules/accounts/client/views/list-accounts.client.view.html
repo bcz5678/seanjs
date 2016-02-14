@@ -1,0 +1,22 @@
+<section ng-controller="AccountsController" ng-init="find()">
+  <div class="page-header">
+    <h1>Accounts</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="account in accounts" ui-sref="accounts.view({accountId: account.id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="account.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="account.user.username"></span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="account.first_name"></h4>
+
+      {{ account.last_name }}
+      <p class="list-group-item-text" ng-bind="account.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="!accounts.length">
+    No accounts yet, why don't you <a ui-sref="accounts.create">create one</a>?
+  </div>
+</section>

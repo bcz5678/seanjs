@@ -8,6 +8,7 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap-theme.css'
       ],
       js: [
+        'public/lib/jquery/dist/jquery.min.js',
         'public/lib/angular/angular.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
@@ -17,7 +18,7 @@ module.exports = {
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'https://www.google.com/recaptcha/api.js'
+        'https://www.google.com/recaptcha/api.js',
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
@@ -37,7 +38,10 @@ module.exports = {
       'modules/*/client/**/*.js'
     ],
     views: ['modules/*/client/views/**/*.html'],
-    templates: ['build/templates.js']
+    templates: ['build/templates.js'],
+    fonts: [
+      '',
+    ]
   },
   server: {
     gruntConfig: 'gruntfile.js',

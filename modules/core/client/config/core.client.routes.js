@@ -17,6 +17,14 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         url: '/',
         templateUrl: 'modules/core/client/views/home.client.view.html'
       })
+      .state('how-it-works', {
+        url: '/how-it-works',
+        templateUrl: 'modules/core/client/views/howItWorks.client.view.html'
+      })
+      .state('share-and-earn', {
+        url: '/share-and-earn',
+        templateUrl: 'modules/core/client/views/shareAndEarn.client.view.html'
+      })
       .state('contact-us', {
         url: '/contact-us',
         templateUrl: 'modules/core/client/views/contact.client.view.html'

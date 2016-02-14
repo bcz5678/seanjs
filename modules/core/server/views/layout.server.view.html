@@ -33,13 +33,21 @@
 
   <!-- Application CSS Files -->
   {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+
+  <!-- Custom Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,600,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
 </head>
 
 <body class="ng-cloak">
   <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-seanjs"></header>
   <section class="content">
-    <section class="container">
-      {% block content %}{% endblock %}
+    <section class="container-fluid">
+      <div class="row">
+        {% block content %}{% endblock %}
+      </div>
     </section>
   </section>
   <footer ng-include="'/modules/core/client/views/footer.client.view.html'"></footer>

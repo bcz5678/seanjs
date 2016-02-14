@@ -8,11 +8,11 @@ module.exports = {
   },
   port: process.env.PORT || 8443,
   db: {
-    name: process.env.DB_NAME || "seanjs_dev",
+    name: process.env.DB_NAME || "vidgigpro-dev",
     host: process.env.DB_HOST || "localhost",
     port: process.env.DB_PORT || 5432,
-    username: process.env.DB_USERNAME || "postgres",
-    password: process.env.DB_PASSWORD || "postgres",
+    username: process.env.DB_USERNAME || "vidgigdev",
+    password: process.env.DB_PASSWORD || "temashare1234",
     dialect: process.env.DB_DIALECT || "postgres", //mysql, postgres, sqlite3,...
     enableSequelizeLog: process.env.DB_LOG || false,
     ssl: process.env.DB_SSL || false,

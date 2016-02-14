@@ -1,149 +1,200 @@
 <section ng-controller="HomeController">
-  <div class="jumbotron text-center">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
-        <img ng-src="modules/core/client/img/brand/logo.png" alt="SEAN.JS Stack" class="img-responsive text-center" />
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <p class="lead">Open-Source Full-Stack Javascript Solution For SEAN Applications</p>
-    </div>
-    <div class="row">
-      <p>
-        <a class="btn btn-default btn-lg" href="https://github.com/seanjs-stack" target="_blank">View on Github</a>
-        <a class="btn btn-primary btn-lg" href="http://seanjs.readthedocs.org/en/latest/" target="_blank">SEAN.JS Documentation</a>
-        <a class="btn btn-success btn-lg" href="https://gitter.im/seanjs-stack/seanjs" target="_blank">Gitter: Join the chat!</a>
-      </p>
-    </div>
-  </div>
-  <div>
-    <hr />
-    <div class="row">
-      <h2 class="text-center">Congratulations! You've configured and ran the sample application!</h2>
-    </div>
-    <hr />
-    <accordion>
-      <accordion-group heading="What is SEAN.JS?" is-open="true">
-        <p>
-          SEAN.JS is a Full-Stack Javascript for an easy starting point with
+  <div class="jumbotron" id="main-jumbo">
+      <div class="container" id="mid-jumbo">
+        <div class="col-xs-12 col-md-5 col-md-offset-1">
+          <h2 class="jumbo-title">VIDEO PRODUCTION</h2>
+          <h1 class="jumbo-title">MADE EASY</h1>
+          <p>One stop shop for high quality, inexpensive videos delivered in 7 days or less</p>
+        </div>
 
-          <a href="http://sequelize.readthedocs.org/en/latest" target="_blank" class="seanjs">
-            <span class="seanjs-capital">S</span>equelize</a>,
+        <div class=" col-xs-12 col-md-4 col-md-offset-2">
+          <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" class="html5lightbox" data-responsive="true"><img src="./modules/core/client/img/main-vid-bg.png" class="img-responsive" title="" alt="" /></a>
+        </div>
+      </div><!-- .container -->
+    </div><!-- .jumbotron #main-jumbo -->
 
-          <a href="http://expressjs.com/" target="_blank" class="seanjs">
-            <span class="seanjs-capital">E</span>xpress</a>,
-
-          <a href="http://angularjs.org/" target="_blank" class="seanjs">
-            <span class="seanjs-capital">A</span>ngularJS</a> and
-
-          <a href="http://nodejs.org/" target="_blank" class="seanjs">
-            <span class="seanjs-capital">N</span>ode.js</a>
-
-          based applications.
-          <br /> It is designed to give you a quick and organized way to start developing SEAN based web apps.
-        </p>
-
-        <b>Configured with</b>
-        <ul>
-
-          <li><a href="https://github.com/optimalbits/node_acl" target="_blank">RedisStore:</a> Redis session store backed by node_redis, and is insanely fast!</li>
-          <li><a href="https://github.com/optimalbits/node_acl" target="_blank">ACL:</a> An Access Control List module, based on Redis with Express middleware support</li>
-          <li><a href="https://github.com/caolan/async" target="_blank">Async:</a> Higher-order functions and common patterns for asynchronous code</li>
-          <li><a href="https://github.com/jaredhanson/passport" target="_blank">Passport:</a> Simple, unobtrusive authentication for Node.js</li>
-          <li><a href="https://github.com/socketio/socket.io" target="_blank">Socket.io:</a> Node.js realtime framework server</li>
-          <li>And many more...</li>
-        </ul>
-      </accordion-group>
-      <accordion-group heading="What is next?">
-        Before you get deeper into the code, we suggest to go through the foundation technologies:
-        <ul>
-          <li><a href="http://sequelize.readthedocs.org/en/latest" target="_blank">Sequelize</a></li>
-          <li><a href="http://expressjs.com/" target="_blank">Express</a></li>
-          <li><a href="http://angularjs.org/" target="_blank">AngularJS</a></li>
-          <li><a href="http://nodejs.org/" target="_blank">Node.js</a></li>
-        </ul>
-        <hr /> As for the front-end: <a href="https://angular-ui.github.io/bootstrap/" target="_blank">Angular UI Bootstrap</a>
-        <hr /> And as for the Session Store: <a href="https://github.com/optimalbits/node_acl" target="_blank">RedisStore</a> (<b>Redis</b>)
-        <br />
-        <ul>
-          <li><a href="http://redis.io/topics/quickstart" target="_blank">Install Redis</a></li>
-          <li>Configuration file:
-            <code>/config/lib/express.js in <b>initSession</b></code>
-          </li>
-        </ul>
-        <hr /> Afterwards:
-        <ul>
-          <li>Configure your Database (<a href="http://www.postgresql.org/download/" target="_blank">PostgreSQL</a>)</li>
-          <li>Configure your app to work with your social accounts, by editing the
-            <code>/config/env/*.js</code> files.</li>
-          <li>Edit your user module.</li>
-          <li>Add new CRUD modules.</li>
-          <li>Head to the <a ui-sref="authentication.signup">Sign up</a> page to start playing around!</li>
-          <li>Have fun!</li>
-        </ul>
-
-      </accordion-group>
-      <accordion-group heading="Need Help?">
-        <h5>Don't worry! We got your back with our AWESOME community...</h5>
-        <ul>
-          <li><a href="http://seanjs.readthedocs.org/en/latest/" target="_blank">SEAN.JS Stack Documentation</a></li>
-          <li><a href="http://stackoverflow.com/tags/seanjs" target="_blank">Stack Overflow</a></li>
-          <li><a href="https://github.com/seanjs-stack/seanjs/issues" target="_blank">GitHub SEAN.JS Issues</a></li>
-        </ul>
-      </accordion-group>
-    </accordion>
-
-  </div>
-  <hr />
-  <div class="row">
-    <div class="col-md-3">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <p>
-            <a href="http://sequelize.readthedocs.org/en/latest" target="_blank">
-              <img alt="Sequelize" class="img-responsive text-center" src="modules/core/client/img/sample/sequelize.png" />
-            </a>
-            <hr />
-            <a href="http://sequelize.readthedocs.org/en/latest" target="_blank">Sequelize</a> is a promise-based ORM for Node.js and io.js. It supports the dialects PostgreSQL, MySQL, MariaDB, SQLite and MSSQL and features solid transaction support,
-            relations, read replication and more.
-          </p>
+    <div class="container">
+      <div class="row" id="model_info">
+        <div class="col-md-6">
+          <img src="./modules/core/client/img/model_slider.png" alt="" title="" class="img-responsive" />
+          <div class="row">
+            <div class="col-md-4 col-xs-4">
+              <img src="./modules/core/client/img/model_profile_1.png"  alt="" title="" class="img-responsive" />
+              <!--<p class="model_followers">2.6 Million Followers</p> -->
+            </div>
+            <div class="col-md-4 col-xs-4">
+              <img src="./modules/core/client/img/model_profile_2.png"  alt="" title="" class="img-responsive" />
+              <!--<p class="model_followers">>3 Million Followers</p>-->
+            </div>
+            <div class="col-md-4 col-xs-4">
+              <img src="./modules/core/client/img/model_profile_3.png"  alt="" title="" class="img-responsive" />
+              <!--<p class="model_followers">26.5K Followers</p>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 col-md-offset-1">
+          <h2 class="model-profile-title">Pick your</h2>
+          <h1 class="model-profile-title">MODEL</h1>
+          <p class="model-profile-text">We believe that people want to see people when watching a video.  Pick the model that best suits your target market so you make the greatest connection with potential clients.  A model that embodies the age, look and feel of your Avatar.</p>
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <a href="http://expressjs.com/" target="_blank">
-            <img alt="Express" class="img-responsive text-center" src="modules/core/client/img/sample/express.png" />
-          </a>
-          <hr />
-          <a href="http://expressjs.com/" target="_blank">Express</a> is a minimal and flexible node.js web application framework, providing a robust set of features for building single and multi-page, and hybrid web applications.
+    <div class="container-fluid" id="testimonial_1">
+      <div class="row-fluid" >
+        <div class="container">
+          <div class="col-md-5" id="testimonial_circle_1">
+            <img src="./modules/core/client/img/testimonial_circle_1.png" class="img-responsive" rel="" title="" />
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <a href="http://angularjs.org/" target="_blank">
-            <img alt="AngularJS" class="img-responsive text-center" src="modules/core/client/img/sample/angularjs.png" />
-          </a>
-          <hr />
-          <a href="http://angularjs.org/" target="_blank">AngularJS</a> lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.
+    <div class="container">
+      <div class="row" id="scriptwriter_images">
+        <div class="col-md-6 col-xs-12">
+          <div class="row">
+            <div class="col-md-4 col-xs-4">
+              <img src="./modules/core/client/img/scriptwriter_img_1.png" alt="" title="" class="img-responsive"/>
+            </div>
+            <div class="col-md-4 col-xs-4">
+              <img src="./modules/core/client/img/scriptwriter_img_2.png" alt="" title=""class="img-responsive" />
+            </div>
+            <div class="col-md-4 col-xs-4">
+              <img src="./modules/core/client/img/scriptwriter_img_3.png" alt="" title="" class="img-responsive"/>
+            </div>
+          </div>
+          <div class="row" >
+            <div class="col-md-6 col-md-offset-3 col-xs-12" id="scriptwriter_quote">
+              <i class="fa fa-quote-left"></i>      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod ...      <i class="fa fa-quote-right"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 col-md-offset-1 col-xs-12">
+          <h3 class="scriptwriter-title">Top notch script writers convey the perfect message</h3>
+          <p class="scriptwriter-text">You.ve picked your model and new one of our world class script writers will communicate your product or service in a way that potential clients can relate with</p>
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="panel panel-primary">
-        <div class="panel-body">
-          <a href="http://nodejs.org/" target="_blank">
-            <img alt="Node.js" class="img-responsive text-center" src="modules/core/client/img/sample/nodejs.png" />
-          </a>
-          <hr />
-          <a href="http://nodejs.org/" target="_blank">Node.js</a> is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+
+    <div class="container-fluid" id="testimonial_2">
+      <div class="row-fluid" >
+        <div class="container">
+          <div class="col-md-5 col-md-offset-7" id="testimonial_circle_2">
+              <img src="./modules/core/client/img/testimonial_circle_1.png" class="img-responsive" rel="" title="" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="container">
+      <div class="row">
+        <h2 class="sectionTitle">FEATURED TALENT</h2>
+        <h4 class="sectionTitleAccent">Noteworthy Services</h4>
+      </div>
+
+      <div class="row" id="featured_talent">
+        <div class="col-md-4">
+          <div id="featured_talent_container">
+            <img src="./modules/core/client/img/featured_1.jpg" class="img-responsive" />
+            <h3 class="profile-title">Click here to see profile</h3>
+            <button class="btn btn-default">Click Here</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="featured_talent_container">
+            <img src="./modules/core/client/img/featured_2.jpg" class="img-responsive" />
+            <h3 class="profile-title">Click here to see profile</h3>
+            <button class="btn btn-default">Click Here</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="featured_talent_container">
+            <img src="./modules/core/client/img/featured_3.jpg" class="img-responsive" />
+            <h3 class="profile-title">Click here to see profile</h3>
+            <button class="btn btn-default">Click Here</button>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="video_editor_info">
+        <div class="col-md-6">
+          <img src="./modules/core/client/img/video_carousel.png" class="video_carousel img-responsive" alt="" title="" />
+        </div>
+        <div class="col-md-5 ">
+          <h2 class="video-editor-title">World class video editors put</h2>
+          <h1 class="video-editor-title">EVERYTHING TOGETHER</h1>
+          <p class="video-editor-text">You are assigned one of our video editors and this is where the magic happens. He or she takes the model, your images and/or videos and creates the ultimate web commercial or educational video</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-fluid" id="testimonial_3">
+      <div class="row-fluid" >
+        <div class="container">
+          <div class="col-md-4 col-md-offset-2" id="testimonial_circle_3">
+              <img src="./modules/core/client/img/testimonial_circle_1.png" class="img-responsive" rel="" title="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <h2 class="sectionTitle">HOW IT WORKS</h2>
+      </div>
+
+      <div class="row">
+        <img src="./modules/core/client/img/how_it_works.png" class="center"/>
+      </div>
+
+      <div class="row" id="select-business">
+        <h2 class="sectionTitle">SELECT YOUR BUSINESS AND GET STARTED</h2>
+      </div>
+      <div class="row" id="select-business-boxes">
+        <div class="col-md-3">
+          <img src="./modules/core/client/img/business_service.png" alt="" title="" />
+          <h4 class="select-business-title">Service Business</h4>
+          <p class="select-usiness-text">Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+          <a href="#" class="select-business-readmore">Read More</a>
+        </div>
+        <div class="col-md-3">
+          <img src="./modules/core/client/img/business_ecommerce.png" alt="" title="" />
+          <h4 class="select-business-title">Retail Business | eCommerce</h4>
+          <p class="select-usiness-text">Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+          <a href="#" class="select-business-readmore">Read More</a>
+        </div>  
+        <div class="col-md-3">
+          <img src="./modules/core/client/img/business_online.png" alt="" title="" />
+          <h4 class="select-business-title">Online Business</h4>
+          <p class="select-usiness-text">Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+          <a href="#" class="select-business-readmore">Read More</a>
+        </div>  
+        <div class="col-md-3">
+          <img src="./modules/core/client/img/business_other.png" alt="" title="" />
+          <h4 class="select-business-title">Other</h4>
+          <p class="select-business-text">Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.</p>
+          <a href="#" class="select-business-readmore">Read More</a>
+        </div>    
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1" id="cta_1">
+          <div class="row">
+            <div class="col-md-7" id="cta_title">
+              <h1>Ready to Get Started?</h1>
+            </div>
+            <div class="col-md-3" id="cta_button">
+              <a href="#" class="btn btn-default btn-lg sharp">Get Started Now!</a>
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1" id="cta_1_shadow">
+          <img class="img-responsive" src="./modules/core/client/img/cta_bluebox_shadow.png" />
+        </div>
+      </div>
+
+    </div>
 
 </section>

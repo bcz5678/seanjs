@@ -1,0 +1,29 @@
+<section ng-controller="ResourcesController" ng-init="findOne()">
+  <div class="page-header">
+    <h1>{{ resource.user.firstName }} {{ resource.user.lastName }}</h1>
+    <ul>
+      <li>{{ resource.user.email }}</li>
+      <li>{{ resource.address }}</li>
+      <li ng-if="resource.address_2">{{ resource.address_2 }}</li>
+      <li>{{ resource.city }}, {{ resource.state }} {{ resource.zipCode }}</li>
+      <li>{{ resource.country }}</li>
+      <li>{{ resource.phoneHome }}</li>
+      <li>{{ resource.phoneMobile }}</li>
+      <li>{{ resource.phoneOffice }}</li>
+      <li>{{ resource.fax }}</li>
+    </ul>
+  </div>
+  <div class="pull-right" ng-show="authentication.user.id == resource.user.id || (authentication.user.roles.indexOf('admin') && authentication.user.roles.indexOf('admin') != -1) ">
+    <a class="btn btn-primary" ui-sref="resources.edit({resourceId: resource.id})">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="remove(resource);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      <span ng-bind="resource.created | date:'mediumDate'"></span>
+    </em>
+  </small>
+</section>

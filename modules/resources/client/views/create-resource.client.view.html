@@ -1,0 +1,71 @@
+<section ng-controller="ResourcesController">
+  <div class="page-header">
+    <h1>New Resource</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="resourceForm" class="form-horizontal" ng-submit="create(resourceForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="address">Address</label>
+          <input name="address" type="text" ng-model="address" id="address" class="form-control" placeholder="address" required>
+          <div ng-messages="resourceForm.address.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Address is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="address_2">Address_2</label>
+          <input name="address_2" type="text" ng-model="address_2" id="address_2" class="form-control" placeholder="Address 2" >
+          <div ng-messages="resourceForm.address_2.$error" role="alert">
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="city">City</label>
+          <input name="city" type="text" ng-model="city" id="city" class="form-control" placeholder="City" required>
+          <div ng-messages="resourceForm.city.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">City is required.</p>
+          </div>
+        </div>
+         <div class="form-group" show-errors>
+          <label for="zipCode">Zip Code</label>
+          <input name="zipCode" type="text" ng-model="zipCode" id="zipCode" class="form-control" placeholder="Zip Code" required>
+          <div ng-messages="resourceForm.zipCode.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Zip Code is required.</p>
+          </div>
+        </div>
+         <div class="form-group" show-errors>
+          <label for="phoneHome">Phone (Home)</label>
+          <input name="phoneHome" type="text" ng-model="phoneHome" id="phoneHome" class="form-control" placeholder="Phone (Home)">
+          <div ng-messages="resourceForm.phoneHome.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"></p>
+          </div>
+        </div>
+         <div class="form-group" show-errors>
+          <label for="phoneMobile">Phone (Mobile)</label>
+          <input name="phoneMobile" type="text" ng-model="phoneMobile" id="phoneMobile" class="form-control" placeholder="Phone (mobile)">
+          <div ng-messages="resourceForm.phoneMobile.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"></p>
+          </div>
+        </div>
+         <div class="form-group" show-errors>
+          <label for="phoneOffice">Phone (Office)</label>
+          <input name="phoneOffice" type="text" ng-model="phoneOffice" id="phoneOffice" class="form-control" placeholder="Phone (Office)">
+          <div ng-messages="resourceForm.phoneOffice.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"></p>
+          </div>
+        </div>
+        <div class="form-group" show-errors></div>
+
+        <div class="form-group">
+          <label for="mainDescription">Main Description</label>
+          <textarea name="mainDescription" ng-model="mainDescription" id="mainDescription" class="form-control" cols="30" rows="10" placeholder="Main Description"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-default">
+        </div>
+        <div ng-show="error" class="text-center alert alert-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<section ng-controller="GigsController" ng-init="findOne()">
+  <div class="page-header">
+    <h1>{{ gig.user.firstName }} {{ gig.user.lastName }}</h1>
+    <ul>
+      <li>{{ gig.user.email }}</li>
+      <li>{{ gig.name }}</li>
+      <li>{{ gig.description }}</li>
+      <li>{{ gig.feelingTags }} </li>
+      <li>{{ gig.preferredTalent }}</li>
+      <li>{{ gig.gigType }}</li>
+      <li>{{ gig.acceptedActors }}</li>
+      <li>{{ gig.acceptedScript }}</li>
+      <li>{{ gig.acceptedEditor }}</li>
+      <li>{{ gig.status }}</li>
+    </ul>
+  </div>
+  <div class="pull-right" ng-show="authentication.user.id == gig.user.id || (authentication.user.roles.indexOf('admin') && authentication.user.roles.indexOf('admin') != -1) ">
+    <a class="btn btn-primary" ui-sref="gigs.edit({gigId: gig.id})">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="remove(gig);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      <span ng-bind="gig.created | date:'mediumDate'"></span>
+    </em>
+  </small>
+</section>

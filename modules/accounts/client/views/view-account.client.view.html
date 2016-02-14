@@ -1,0 +1,29 @@
+<section ng-controller="AccountsController" ng-init="findOne()">
+  <div class="page-header">
+    <h1>{{ account.user.firstName }} {{ account.user.lastName }}</h1>
+    <ul>
+      <li>{{ account.user.email }}</li>
+      <li>{{ account.address }}</li>
+      <li ng-if="account.address_2">{{ account.address_2 }}</li>
+      <li>{{ account.city }}, {{ account.state }} {{ account.zipCode }}</li>
+      <li>{{ account.country }}</li>
+      <li>{{ account.phoneHome }}</li>
+      <li>{{ account.phoneMobile }}</li>
+      <li>{{ account.phoneOffice }}</li>
+      <li>{{ account.fax }}</li>
+    </ul>
+  </div>
+  <div class="pull-right" ng-show="authentication.user.id == account.user.id || (authentication.user.roles.indexOf('admin') && authentication.user.roles.indexOf('admin') != -1) ">
+    <a class="btn btn-primary" ui-sref="accounts.edit({accountId: account.id})">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="remove(account);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      <span ng-bind="account.created | date:'mediumDate'"></span>
+    </em>
+  </small>
+</section>

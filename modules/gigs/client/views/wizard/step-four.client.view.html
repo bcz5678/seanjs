@@ -1,0 +1,103 @@
+
+
+	<div class="row">
+		<div id="talent-filters" class="col-md-3" ng-controller="filterController">
+		
+			<h3>Filters</h3>
+			<h4>Sex</h4>
+
+			<label ng-repeat="sex in filter.sexes">
+			 
+			  <input
+			    type="checkbox"
+			    name="selectedSex[]"
+			    value="{{sex.name}}"
+			    ng-model="sex.selected"
+			  > {{sex.name}}
+			</label>
+
+			
+			<h4>Age</h4>
+			<div ion-range-slider range-options="filter.age" id="range_age"></div>
+			<p>{{ filter.age.from }} : {{ filter.age.to }}</p>
+			
+			<h4>Height</h4>
+			<div ion-range-slider range-options="filter.height"  id="range_height"></div>
+
+			<h4>Weight</h4>
+			<div ion-range-slider range-options="filter.weight" id="range_weight"></div>
+			
+			
+			<h4>Ethnicity</h4>
+			
+			<label ng-repeat="ethnicity in filter.ethnicities">
+			  <!--
+			    - use `value="{{fruit.name}}"` to give the input a real value, in case the form gets submitted
+			      traditionally
+
+			    - use `ng-checked="fruit.selected"` to have the checkbox checked based on some angular expression
+			      (no two-way-data-binding)
+
+			    - use `ng-model="fruit.selected"` to utilize two-way-data-binding. Note that `.selected`
+			      is arbitrary. The property name could be anything and will be created on the object if not present.
+			  -->
+			  <input
+			    type="checkbox"
+			    name="selectedEthnicity[]"
+			    value="{{ethnicity.name}}"
+			    ng-model="ethnicity.selected"
+			  > {{ethnicity.name}}
+			</label>
+			
+			
+			<h4> Language Spoken </h4>
+			<label ng-repeat="language in filter.languages">
+			 
+			  <input
+			    type="checkbox"
+			    name="selectedLanguage[]"
+			    value="{{language.name}}"
+			    ng-model="language.selected"
+			  > {{language.name}}
+			</label>
+
+			<div>
+				<button class="btn btn-primary" ng-click="buildFiltersSearch()">Search</button>
+				<button class="btn btn-default" ng-click="resetFilters()">Reset</button>
+			</div>
+
+
+		</div>
+
+
+		<div id="talent-gallery" class="col-md-9 animated fadeInRight" ng-controller="talentGalleryController">
+			<div class="container-fluid">
+				<div class="row">
+				<h2>Models</h2>
+
+
+					<!-- Start talent Cards -->
+					<div class="col-md-3 talent-card" ng-repeat="talent in talentArray">
+						<a href="{{talent.id}}"><img class="img-responsive talent-topimage" src="assets/img/talent/{{talent.topimage}}" /></a>
+						<h3 class="talent-name"> {{ talent.name }}</h3>
+						<div class="talent-stats">
+							<span class="talent-label">Age: </span> {{ talent.age }}  <span class="talent-label">Sex: </span> {{ talent.sex }} <br>
+							<span class="talent-label">Ethnicity: </span> {{ talent.ethnicity }} <br>
+							<span class="talent-label">Languages: </span> {{ talent.languages }}
+						</div>
+						<div class="talent-tags">
+							<h5 class="talent-tags-headline"> Personality Tags:</h5>
+							<span ng-repeat="tag in talent.personality_tags" class="label label-default"> {{tag}}</span>	
+						</div>
+					</div>
+					<!-- End talent Cards -->
+				</div>
+			</div>
+		</div>
+
+		<!-- Testing the Wizard Buttons -->
+	</div><!-- .row -->
+
+
+<a ui-sref="gigs.wizard.step-five" class="btn btn-primary">Next</a>
+
