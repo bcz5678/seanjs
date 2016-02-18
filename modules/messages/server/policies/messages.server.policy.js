@@ -41,7 +41,10 @@ exports.invokeRolesPolicies = function() {
     allows: [{
       resources: '/api/messages',
       permissions: ['get', 'post']
-    }, {
+    },{
+      resources: '/api/messages/unread',
+      permissions: ['get']
+    },{
       resources: '/api/messages/:messageId',
       permissions: ['get']
     }]

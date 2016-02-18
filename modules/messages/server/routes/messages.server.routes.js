@@ -16,8 +16,13 @@ module.exports = function(app) {
     .get(messages.list)
     .post(messages.create);
 
+  // Messages collection routes
+  app.route('/api/messages/unread')
+    .all(messagesPolicy.isAllowed)
+    .get(messages.unread);
+
   // Single message routes
-  app.route('/api/messages/:messageId')
+  app.route('/api/messages/:messageId([0-9]+)')
     .all(messagesPolicy.isAllowed)
     .get(messages.read)
     .put(messages.update)

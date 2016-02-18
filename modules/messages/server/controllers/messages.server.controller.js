@@ -107,11 +107,36 @@ exports.list = function(req, res) {
 };
 
 /**
+ * List of Messages
+ */
+exports.unread = function(req, res) {
+  Message.find({
+    where: {
+      read: false
+    },
+    include: [{
+      model: db.user
+    }]
+  }).then(function(messages) {
+    if (!messages) {
+      return res.status(404).send({
+        message: 'No messages found'
+      });
+    } else {
+      res.json(messages);
+    }
+  }).catch(function(err) {
+    res.jsonp(err);
+  });
+};
+
+/**
  * Message middleware
  */
 exports.messageByID = function(req, res, next, id) {
 
-  if ((id % 1 === 0) === false) { //check if it's integer
+  if ((id % 1 === 0) === false) {
+    //check if it's integer
     return res.status(404).send({
       message: 'Message is invalid'
     });

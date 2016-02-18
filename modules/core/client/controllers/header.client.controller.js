@@ -1,10 +1,15 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '$location', '$state', 'Authentication', 'Menus',
-  function($rootScope, $scope, $location, $state, Authentication, Menus) {
+angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '$location', '$state', '$http','Authentication', 'Menus',
+  function($rootScope, $scope, $location, $state, $http, Authentication, Menus) {
     // Expose view variables
     $scope.$state = $state;
     $scope.authentication = Authentication;
+
+    $http.get("api/messages/unread").success(function(message){
+      $scope.unreadMessages = message;
+    });
+    
 
     // Get the topbar menu
     $scope.menu = Menus.getMenu('topbar');
