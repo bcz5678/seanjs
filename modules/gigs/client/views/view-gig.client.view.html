@@ -1,5 +1,5 @@
-<section ng-controller="GigsController" ng-init="findOne()">
-  <div class="page-header">
+ <section ng-controller="GigsController" ng-init="findOne()">
+  <div class="col-sm-8 col-s">
     <h1>{{ gig.user.firstName }} {{ gig.user.lastName }}</h1>
     <ul>
       <li>{{ gig.user.email }}</li>
@@ -14,6 +14,13 @@
       <li>{{ gig.status }}</li>
     </ul>
   </div>
+  <div class="">
+      Insert MEdia Here
+  </div>
+  <div class="">
+      Insert Insert Messages Here
+  </div>
+  
   <div class="pull-right" ng-show="authentication.user.id == gig.user.id || (authentication.user.roles.indexOf('admin') && authentication.user.roles.indexOf('admin') != -1) ">
     <a class="btn btn-primary" ui-sref="gigs.edit({gigId: gig.id})">
       <i class="glyphicon glyphicon-edit"></i>

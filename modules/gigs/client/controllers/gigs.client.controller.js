@@ -85,6 +85,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
 .controller('wizardController', ['$scope', 
   function($scope){
     $scope.formData = {};
+    $scope.formData.campaignStyle = '';
   }
 ])
 .controller('talentGalleryController', ['$scope', 'filterHelper', function($scope, filterHelper) {
