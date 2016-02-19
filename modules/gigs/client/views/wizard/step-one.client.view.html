@@ -14,29 +14,64 @@
                 <input id="videoName" ng-model="formData.videoname" name="videoname" type="text" class="form-control">
             </div>
             <div class="form-group">
-                <label>Video Use</label>
+                <label>Number of Videos</label>
                 <div class="input-group">
-                	<select id="videoUse" ng-model="formData.videouse" name="videouse" chosen class="chosen-select">
-                		<option value="">Select</option>
-				        <option value="youtube">Youtube</option>
-				        <option value="facebook">Facebook</option>
-				        <option value="amazon">Amazon</option>
-				        <option value="ecommerce">Ecommerce Site</option>
-				    </select>
-				</div>
+                    <select id="videoNumberType" ng-model="formData.videonumbertype" name="videonumbertype" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option value="single">Single</option>
+                        <option value="multi">Multi-Video Package </option>
+                        <option value="recurring">Recurring Video - Best value</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Length of video</label>
-            	<div class="input-group">
-                	<select id="videoLength" ng-model="formData.videolength" name="videolength" chosen class="chosen-select">
-                		<option value="">Select</option>
-        				<option value="30s">0-30 seconds</option>
-        				<option value="30s-1m">30 seconds - 1 minute</option>
-        			     <option value="1m-2m">1-2 minutes</option>
-			             <option value="2m+">Over 2 minutes</option>
- 		    	    </select>
-		        </div>
-	        </div>
+             <div ng-if="formData.videonumbertype === 'multi'" class="form-group">
+                <label>Multi-Video Package Options</label>
+                <div class="input-group">
+                    <select id="videoMultiOptions" ng-model="formData.videomultioptions" name="videomultioptions" chosen class="chosen-select">
+                        <option value="allAtOnce">All at Once</option>
+                        <option value="packageOverTime">Package Over Time (i.e. 4 in 3 months)</option>
+                    </select>
+                </div>
+            </div>
+            <div ng-if="formData.videomultioptions === 'allAtOnce'" class="form-group">
+                <label>All At Once Package - How Many</label>
+                <div class="input-group">
+                    <select id="videoMultiAllAtOnce" ng-model="formData.videomultiallatonce" name="videomultiallatonce" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="5+">More than 5</option>
+                    </select>
+                </div>
+            </div>
+            <div ng-if="formData.videomultioptions === 'packageOverTime'" class="form-group">
+                <label>Package Over Time - Options</label>
+                <div class="input-group">
+                    <select id="videoOverTimeOptions" ng-model="formData.videoOverTimeOptions.number" name="videoOverTimeOptionsNumber" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option value="1">1</option>
+                        <option value="3">2</option>
+                        <option value="4">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="5+">More than 5</option>
+                    </select>
+                </div>
+                <label>Package Over Time - Options</label>
+                <div class="input-group">
+                    <select id="videoOverTimeOptions" ng-model="formData.videoOverTimeOptions.timeFrame" name="videoOverTimeOptionsTimeFrame" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option value="1month">1 Month</option>
+                        <option value="2months">2 Months</option>
+                        <option value="3months">3 Months</option>
+                        <option value="4months">4 Months</option>
+                        <option value="5months">5 Months</option>
+                        <option value="6months">6 Months</option>
+                    </select>
+                </div>
+            </div>
             <a ng-click="formData.campaignStyle = ''"  href="" class="btn btn-primary">Back</a>
             <a ui-sref="gigs.wizard.step-two" class="btn btn-primary">Next</a>
         </div>

@@ -4,8 +4,37 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="form-group">
-                <label>Question #1</label>
-                <input id="twoOne" ng-model="formData.twoOne" name="twoOne" type="text" class="form-control">
+                <label>Video Use</label>
+                <div class="input-group">
+                    <select id="videoUse" ng-model="formData.videouse" name="videouse" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option value="youtube">Youtube</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="amazon">Amazon</option>
+                        <option value="ecommerce">Ecommerce Site</option>
+                        <option value="services">Services</option>
+                        <option value="personal">Personal Site</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Length of video</label>
+                <div class="input-group">
+                    <select id="videoLength" ng-model="formData.videolength" name="videolength" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option value="0s-30s">0-30 seconds</option>
+                        <option value="30s-1m">30 seconds - 1 minute</option>
+                        <option value="1m-2m">1-2 minutes</option>
+                        <option value="2m-3m">2-3 minutes</option>
+                        <option value="3m-4m">3-4 minutes</option>
+                        <option value="4m-5m">4-5 minutes</option>
+                        <option value="5m+">Over 5 minutes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Purpose of the Video? (i.e. Educational, Biography, Entertaining, Viral, Corporate)</label>
+                <input id="videoPurpose" ng-model="formData.video.purpose" name="videoPurpose" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label>Question #2</label>
