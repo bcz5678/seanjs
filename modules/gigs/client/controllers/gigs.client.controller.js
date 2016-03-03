@@ -124,8 +124,8 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
 ])
 .controller('talentGalleryController', ['$scope', 'filterHelper', function($scope, filterHelper) {
   $scope.filterText = filterHelper.data;
-  $scope.talentMediaUrl = "/public/uploads/users/media/";
-  $scope.talentArray = [{ "id" : 1,
+  $scope.talentMediaUrl = "/uploads/users/media/";
+  $scope.talentArray = [{ "id" : 15,
             "name" :"Josephine Baker", 
             "topimage":"15-0001.jpg", 
             "age" : "25",
@@ -134,7 +134,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "languages" : "English, Russian, Mandarin",
             "personality_tags" : ["Model", "Actor", "Dancer"],
             },
-            { "id" : 2,
+            { "id" : 27,
             "name" :"Bob Hope", 
             "topimage":"27-0001.jpg", 
             "age" : "65",
@@ -143,7 +143,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "languages" : "English, German",
             "personality_tags" : ["Comedian", "Actor" ],
             },
-            { "id" : 3,
+            { "id" : 19,
             "name" :"Tom Cruise", 
             "topimage":"19-0001.jpg", 
             "age" : "55",
@@ -152,7 +152,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "languages" : "English, Cthulu, Scientology",
             "personality_tags" : ["Actor", "Nutjob"],
             },
-            { "id" : 4,
+            { "id" : 193,
             "name" :"Jennifer Anniston", 
             "topimage":"193-0001.jpg", 
             "age" : "45",
@@ -165,52 +165,29 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
 .controller('filterController', ['$scope', 'filterHelper', function($scope, filterHelper) {
   $scope.filter = filterHelper.data;
 
-  $scope.filter.age = {
-        from: 25, 
-        to: 60,
-        min: 18,
-        max: 99,
-        type: 'double',
-        prettify: true,
-        grid: true,
-        force_edges: true,
-        onChange: function(data) {
-          $scope.filter.age.from = data.from;
-          $scope.filter.age.to = data.to;        
-        }
-    };
+  $scope.filter.ages =  [ "18-24",
+                          "25-29",
+                          "30-35",
+                          "36-40",
+                          "40-50",
+                          "50-60",
+                          "60+"
+                        ];
 
-    $scope.filter.height = {
-        min: 0,
-        max: 50,
-        values: ["4'0","4'1","4'2","4'3","4'4","4'5","4'6","4'7","4'8","4'9","4'10","4'11",
-                "5'0","5'1","5'2","5'3","5'4","5'5","5'6","5'7","5'8","5'9","5'10","5'11",
-                "6'0","6'1","6'2","6'3","6'4","6'5","6'6","6'7","6'8","6'9","6'10","6'11"],
-        from: 12,
-        to: 24,
-        type: 'double',
-        prettify: false,
-        grid: true,
-        onChange: function(data) {
-          $scope.filter.height.from = data.fromNumber;
-          $scope.filter.height.to = data.toNumber;        
-        }
-    };
+  $scope.filter.physicalTypes = [  "Tall",
+                                  "Short",
+                                  "Slim",
+                                  "Curvy",
+                                  "Fit/Athletic",
+                                  "Muscular",
+                                  "Plus-size"
+                                ];
 
-  $scope.filter.weight = {
-        min: 0,
-        max: 300,
-        from: 100,
-        to: 225,
-        type: 'double',
-        prettify: true,
-        grid: true,
-        onChange: function(data) {
-          $scope.filter.weight.from = data.fromNumber;
-          $scope.filter.weight.to = data.toNumber;        
-        }
-    };
-
+  $scope.filter.hairColors  = [ "Blonde", 
+                                "Brunette", 
+                                "Red", 
+                                "Gray"
+                              ];
 
 
   // ------------Start Ethnicity Checkbox Selection -------------
@@ -268,7 +245,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             {name : 'French', selected : false },
             {name : 'Russian',  selected : false },
             {name : 'Mandarin', selected : false },
-            {name : 'Dutch',  selected : false }
+            {name : 'Portugueuse',  selected : false }
             ];
 
   $scope.filter.languagesSelection = [];
@@ -286,17 +263,36 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
   );
 
 
+   // ------------Start Ethnicity Checkbox Selection -------------
+  $scope.filter.modelTags = [
+          {name : 'Model', selected : false }, 
+          {name : 'Singer',  selected : false },
+          {name : 'Dancer',  selected : false },
+          {name : 'Energetic',  selected : false },
+          {name : 'Comedic',  selected : false },
+          {name : 'Dramatic',  selected : false },
+          ];
+
+
+  $scope.filter.modelTagsSelection = [];
+
+  //helper function
+  $scope.selectedModelTags = function() {
+    return filterFilter($scope.filter.modelTags, {selected: true});
+  };
+
+  //watch selected 
+
+  $scope.$watch('filter.modelTags|filter:{selected:true}', function(nv){
+      $scope.filter.modelTagsSelection = nv.map(function(modelTag){return modelTag.name});
+    }, true
+  );
+
+
   // ------------Start Search Build  -------------
   $scope.buildFiltersSearch = function() {
       $scope.search = {}
-      $scope.search.age = $scope.filter.age;
-      $scope.search.weight = $scope.filter.weight;
-
-      $scope.search.height = {};
-
-      $scope.search.height.from = heightValues[$scope.filter.height.from];
-      $scope.search.height.to = heightValues[$scope.filter.height.to];
-
+      $scope.search.ages = $scope.filter.ages;
       $scope.search.sexes = $scope.filter.sexesSelection;
       $scope.search.ethnicities = $scope.filter.ethnicitiesSelection;
       $scope.search.languages = $scope.filter.languagesSelection;

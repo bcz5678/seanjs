@@ -264,18 +264,36 @@
               > {{sex.name}}
             </label>
 
-            
-            <h4>Age</h4>
-            <div ion-range-slider range-options="filter.age" id="range_age"></div>
-            <p>{{ filter.age.from }} : {{ filter.age.to }}</p>
-            
-            <h4>Height</h4>
-            <div ion-range-slider range-options="filter.height"  id="range_height"></div>
+             <div class="form-group">
+                <label>Age Range</label>
+                <div class="input-group">
+                    <select id="ageRange" ng-model="filter.age" name="ageRange" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option ng-repeat="age in filter.ages" value='{{age}}'>{{age}}</option>
+                    </select>
+                </div>
+            </div>
 
-            <h4>Weight</h4>
-            <div ion-range-slider range-options="filter.weight" id="range_weight"></div>
-            
-            
+            <div class="form-group">
+                <label>Physical Type</label>
+                <div class="input-group">
+                    <select id="physicalType" ng-model="filter.physicalTypes" name="physicalType" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option ng-repeat="phyicalType in filter.physicalTypes" value='{{phyicalType}}'>{{phyicalType}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Hair Color</label>
+                <div class="input-group">
+                    <select id="hairColor" ng-model="filter.physicalTypes" name="hairColor" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option ng-repeat="phyicalType in filter.physicalTypes" value='{{phyicalType}}'>{{phyicalType}}</option>
+                    </select>
+                </div>
+            </div>
+                      
             <h4>Ethnicity</h4>
             
             <label ng-repeat="ethnicity in filter.ethnicities">
@@ -309,6 +327,16 @@
               > {{language.name}}
             </label>
 
+             <h4> Language Spoken </h4>
+            <label ng-repeat="modelTag in filter.modelTags">
+             
+              <input
+                type="checkbox"
+                name="selectedmodelTag[]"
+                value="{{modelTag.name}}"
+                ng-model="modelTag.selected"
+              > {{modelTag.name}}
+            </label>
             <div>
                 <button class="btn btn-primary" ng-click="buildFiltersSearch()">Search</button>
                 <button class="btn btn-default" ng-click="resetFilters()">Reset</button>
