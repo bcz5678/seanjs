@@ -16,7 +16,7 @@ angular.module('accounts').factory('Accounts', ['$resource',
 //Accounts service used for communicating with the accounts REST endpoints
 angular.module('accounts').factory('TalentProfiles', ['$resource',
   function($resource) {
-    return $resource('api/talentprofiles/:accountId', {
+    return $resource('api/talent/:profileId', {
       accountId: '@id'
     }, {
       update: {
