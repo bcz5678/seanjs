@@ -1,12 +1,12 @@
 <div id="video-wizard" class="container-fluid" ng-controller="wizardController">
 	<div id="wizard-progress" class="row animated fadeInLeft">
 		<ul id="wizard-bar" class="col-md-12 list-inline">
-			<li class="complete"><a ui-sref="gigs.wizard.step-one" >1. CREATE VIDEO<span class="list-inset">1.</span></a></li>
-			<li class="complete"><a ui-sref="gigs.wizard.step-two" >2. VIDEO DETAILS<span class="list-inset">2.</span></a></li>
-			<li class="complete"><a ui-sref="gigs.wizard.step-three" >3. SCRIPT DETAILS WRITERS<span class="list-inset">3.</span></a></li>
-			<li class="current"><a ui-sref="gigs.wizard.step-four" >4. CHOOSE YOUR MODELS<span class="list-inset">4.</span></a></li>
-			<li class="incomplete"><a ui-sref="gigs.wizard.step-five" >5. PAYMENT DETAILS<span class="list-inset">5.</span></a></li>
-			<li class="incomplete"><a ui-sref="gigs.wizard.step-six" >6. SUBMIT VIDEO<span class="list-inset">6.</span></a></li>
+			<li class="complete"><a ng-click="formData.page = 1" href="">1. CREATE VIDEO<span class="list-inset">1.</span></a></li>
+			<li class="complete"><a ng-click="formData.page = 2" href="">2. VIDEO DETAILS<span class="list-inset">2.</span></a></li>
+			<li class="complete"><a ng-click="formData.page = 3" href="">3. SCRIPT DETAILS WRITERS<span class="list-inset">3.</span></a></li>
+			<li class="current"><a ng-click="formData.page = 4" href="">4. CHOOSE YOUR MODELS<span class="list-inset">4.</span></a></li>
+			<li class="incomplete"><a ng-click="formData.page = 5" href="">5. PAYMENT DETAILS<span class="list-inset">5.</span></a></li>
+			<li class="incomplete"><a ng-click="formData.page = 6" href="">6. SUBMIT VIDEO<span class="list-inset">6.</span></a></li>
 		</ul>
 	</div>
 

@@ -48,6 +48,13 @@ angular.module('gigs').config(['$stateProvider',
           roles: ['user', 'admin']
         }
       })
+      .state('gigs.wizard.index', {
+        url: '/wizard-index',
+        templateUrl: 'modules/gigs/client/views/wizard/wizard-index.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
       .state('gigs.wizard.step-one', {
         url: '/step-one',
         templateUrl: 'modules/gigs/client/views/wizard/step-one.client.view.html',

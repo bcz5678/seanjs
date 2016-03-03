@@ -1,0 +1,387 @@
+<div ng-if="formData.page === 1">
+    <fieldset  class="animated fadeIn">
+        <h2>Create Your Video</h2>
+
+        <div ng-if="formData.campaign.brand === ''">
+            <h2>What Kind of video campaign can we create for you today?</h2>
+            <button ng-click="formData.campaign.brand = 'package'" href="">Bundle</button>
+            <button ng-click="formData.campaign.brand = 'custom'" href="">Custom</button>
+        </div>
+
+        <div class="row" ng-if="formData.campaign.brand === 'custom'" >
+            <div class="col-lg-8 col-lg-offset-2 animated fadeIn">
+                <div class="form-group">
+                    <label>Campaign Name</label>
+                    <input id="campaignName" ng-model="formData.campaign.name" name="campaignName" type="text" class="form-control" required>
+                    <div ng-messages="formData.campaign.name.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Campaign Name is required.</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Number of Videos</label>
+                    <div class="input-group">
+                        <select id="videoNumberType" ng-model="formData.campaign.videos.numbertype" name="videonumbertype" chosen class="chosen-select" ng-change="clearOptions()">
+                            <option value="">Select</option>
+                            <option value="single">Single</option>
+                            <option value="multi">Multi-Video Package </option>
+                            <option value="recurring" >Recurring Video - Best value</option>
+                        </select>
+                    </div>
+                </div>
+                 <div ng-if="formData.campaign.videos.numbertype === 'multi'" class="form-group animated fadeIn">
+                    <label>Multi-Video Package Options</label>
+                    <div class="input-group">
+                        <select id="videoMultiOptions" ng-model="formData.campaign.videos.options.name" name="videomultioptions" chosen class="chosen-select" ng-change="clearPackageOptions()">
+                            <option value="allAtOnce">All at Once</option>
+                            <option value="packageOverTime">Package Over Time (i.e. 4 in 3 months)</option>
+                        </select>
+                    </div>
+                
+                    <div ng-if="formData.campaign.videos.options.name === 'allAtOnce'" class="form-group animated fadeIn">
+                        <label>All At Once Package - How Many</label>
+                        <div class="input-group">
+                            <select id="videoMultiAllAtOnce" ng-model="formData.campaign.videos.options.number" name="videomultiallatonce" chosen class="chosen-select" >
+                                <option value="">Select</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="5+">More than 5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div ng-if="formData.campaign.videos.options.name === 'packageOverTime'" class="form-group animated fadeIn">
+                        <label>Package Over Time - Number of Videos</label>
+                        <div class="input-group">
+                            <select id="videoOverTimeOptions" ng-model="formData.campaign.videos.options.number" name="videoOverTimeOptionsNumber" chosen class="chosen-select">
+                                <option value="">Select</option>
+                                <option value="1">1</option>
+                                <option value="3">2</option>
+                                <option value="4">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="5+">More than 5</option>
+                            </select>
+                        </div>
+                        <label>Package Over Time - Time Frame</label>
+                        <div class="input-group">
+                            <select id="videoOverTimeOptions" ng-model="formData.campaign.videos.options.timeFrame" name="videoOverTimeOptionsTimeFrame" chosen class="chosen-select">
+                                <option value="">Select</option>
+                                <option value="1month">1 Month</option>
+                                <option value="2months">2 Months</option>
+                                <option value="3months">3 Months</option>
+                                <option value="4months">4 Months</option>
+                                <option value="5months">5 Months</option>
+                                <option value="6months">6 Months</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <a ng-click="formData.campaign.brand = ''"  href="" class="btn btn-primary">Back</a>
+                <a ng-click="formData.page = 2"  href="" class="btn btn-primary">Next</a>
+            </div>
+        </div>
+        <div class="row" ng-if="formData.campaign.brand ==='package'">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="form-group">
+                    <label>Package Name</label>
+                    <input id="videoName" ng-model="formData.packageName" name="packagename" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Package Type</label>
+                    <div class="input-group">
+                        <select id="videoUse" ng-model="formData.packageType" name="packagetype" chosen class="chosen-select">
+                            <option value="">Select</option>
+                            <option value="1-1-15s">1 actor, 1 location, 15 seconds ($250)</option>
+                            <option value="1-1-30s">1 actor, 1 location, 30 seconds ($350)</option>
+                            <option value="1-1-1m">1 actor, 1 location, 1 Minute ($400)</option>
+                            <option value="1-1-2m">1 actor, 1 location, 2 Minutes ($450)</option>
+                        </select>
+                    </div>
+                </div>
+                <a ng-click="formData.campaign.brand = ''"  href="" class="btn btn-primary">Back</a>
+                <a ng-click="formData.page = 2"  href="" class="btn btn-primary">Next</a>
+            </div>
+        </div>
+    </fieldset>
+    
+</div>
+<div ng-if="formData.page === 2">
+    <fieldset  class="animated fadeIn">
+        <h2>Video Details</h2>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="form-group">
+                    <label>Video Use</label>
+                    <div class="input-group">
+                        <select id="videoUse" ng-model="formData.video.use" name="videouse" chosen class="chosen-select">
+                            <option value="">Select</option>
+                            <option value="youtube">Youtube</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="amazon">Amazon</option>
+                            <option value="ecommerce">Ecommerce Site</option>
+                            <option value="services">Services</option>
+                            <option value="personal">Personal Site</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Length of video</label>
+                    <div class="input-group">
+                        <select id="videoLength" ng-model="formData.video.length" name="videolength" chosen class="chosen-select">
+                            <option value="">Select</option>
+                            <option value="0s-30s">0-30 seconds</option>
+                            <option value="30s-1m">30 seconds - 1 minute</option>
+                            <option value="1m-2m">1-2 minutes</option>
+                            <option value="2m-3m">2-3 minutes</option>
+                            <option value="3m-4m">3-4 minutes</option>
+                            <option value="4m-5m">4-5 minutes</option>
+                            <option value="5m+">Over 5 minutes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Video Setting</label>
+                    <div class="input-group">
+                        <label class="radio-inline">
+                            <input type="radio" ng-model="formData.video.setting" name="videoSetting" value="indoor">Indoor
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" ng-model="formData.video.setting" name="videoSetting"  value="outdoor">Outdoor
+                        </label>
+                        <div class="form-group" ng-if="formData.video.setting === 'indoor'">
+                            <label>Indoor Options</label>
+                            <div class="input-group" >
+                                <select id="videoSettingIndoor" ng-model="formData.video.settingOptions" name="videousedetails" chosen class="chosen-select">
+                                    <option value="">Select</option>
+                                    <option value="greenscreen">Green Screen</option>
+                                    <option value="bathroom">Bathroom</option>
+                                    <option value="kitchen">Kitchen</option>
+                                    <option value="livingroom">Living Room</option>
+                                    <option value="garage">Garage</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-if="formData.video.setting === 'outdoor'">
+                            <label>Outdoor Options</label>
+                            <div class="input-group" >
+                                <select id="videoSettingIndoor" ng-model="formData.video.settingOptions" name="videousedetails" chosen class="chosen-select">
+                                    <option value="">Select</option>
+                                    <option value="park">Park</option>
+                                    <option value="selfie">Selfie</option>
+                                    <option value="street">Street</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>General Attire Requirments</label>
+                    <div class="input-group">
+                        <select id="videoAttire" ng-model="formData.video.attire" name="videoAttire" chosen class="chosen-select">
+                            <option value="">Select</option>
+                            <option value="corporate">Corporate</option>
+                            <option value="sporting">Sporting</option>
+                            <option value="medical">Medical (i.e. scrubs,lab coat)</option>
+                            <option value="businessCasual">Business Casual</option>
+                            <option value="nightclub">Nightclub</option>
+                            <option value="swimwear">Swimwear</option>
+                            <option value="outdoors">Outdoors (hiking, camping)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Purpose of the Video? (i.e. Educational, Biography, Entertaining, Viral, Corporate)</label>
+                    <input id="videoPurpose" ng-model="formData.video.purpose" name="videoPurpose" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>General Prop/Product requirements</label>
+                        <input id="videoProps" ng-model="formData.video.props" name="videoProps"  type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Style Tags</label>
+                    <div>
+                        <label ng-repeat="videoTag in videoTags">
+                            <input
+                                type="checkbox"
+                                name="selectedVideoTag[]"
+                                value="{{videoTag.name}}" ng-model="videoTag.selected" > {{ videoTag.name }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a ng-click="formData.page = 1"  href="" class="btn btn-primary">Back</a>
+        <a ng-click="formData.page = 3"  href="" class="btn btn-primary">Next</a>
+    </fieldset> 
+</div>
+<div ng-if="formData.page === 3">
+    <fieldset  class="animated fadeIn">
+        <h2>Scrptwriters and Editors</h2>
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="form-group">
+                    <label>Question #1</label>
+                    <input id="threeOne" ng-model="formData.video.script" name="threeOne" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Question #2</label>
+                    <div class="input-group">
+                        <input id="threeTwo" ng-model="formData.threeTwo" name="threeTwo" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Question #3</label>
+                    <div class="input-group">
+                        <input id="threeThree" ng-model="formData.threeThree" name="threeThree" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a ng-click="formData.page = 2"  href="" class="btn btn-primary">Back</a>
+        <a ng-click="formData.page = 4"  href="" class="btn btn-primary">Next</a>
+    </fieldset>
+</div>
+<div ng-if="formData.page === 4">
+    <div class="row">
+        <div id="talent-filters" class="col-md-3 animated fadeIn" ng-controller="filterController">
+            {{ filt}}
+        
+            <h3>Filters</h3>
+            <h4>Sex</h4>
+
+            <label ng-repeat="sex in filter.sexes">
+             
+              <input
+                type="checkbox"
+                name="selectedSex[]"
+                value="{{sex.name}}"
+                ng-model="sex.selected"
+              > {{sex.name}}
+            </label>
+
+            
+            <h4>Age</h4>
+            <div ion-range-slider range-options="filter.age" id="range_age"></div>
+            <p>{{ filter.age.from }} : {{ filter.age.to }}</p>
+            
+            <h4>Height</h4>
+            <div ion-range-slider range-options="filter.height"  id="range_height"></div>
+
+            <h4>Weight</h4>
+            <div ion-range-slider range-options="filter.weight" id="range_weight"></div>
+            
+            
+            <h4>Ethnicity</h4>
+            
+            <label ng-repeat="ethnicity in filter.ethnicities">
+              <!--
+                - use `value="{{fruit.name}}"` to give the input a real value, in case the form gets submitted
+                  traditionally
+
+                - use `ng-checked="fruit.selected"` to have the checkbox checked based on some angular expression
+                  (no two-way-data-binding)
+
+                - use `ng-model="fruit.selected"` to utilize two-way-data-binding. Note that `.selected`
+                  is arbitrary. The property name could be anything and will be created on the object if not present.
+              -->
+              <input
+                type="checkbox"
+                name="selectedEthnicity[]"
+                value="{{ethnicity.name}}"
+                ng-model="ethnicity.selected"
+              > {{ethnicity.name}}
+            </label>
+            
+            
+            <h4> Language Spoken </h4>
+            <label ng-repeat="language in filter.languages">
+             
+              <input
+                type="checkbox"
+                name="selectedLanguage[]"
+                value="{{language.name}}"
+                ng-model="language.selected"
+              > {{language.name}}
+            </label>
+
+            <div>
+                <button class="btn btn-primary" ng-click="buildFiltersSearch()">Search</button>
+                <button class="btn btn-default" ng-click="resetFilters()">Reset</button>
+            </div>
+
+
+        </div>
+
+
+        <div id="talent-gallery" class="col-md-9 animated fadeInRight" ng-controller="talentGalleryController">
+            <div class="container-fluid">
+                <div class="row">
+                <h2>Models</h2>
+
+
+                    <!-- Start talent Cards -->
+                    <div class="col-md-3 talent-card" ng-repeat="talent in talentArray">
+                        <a href="{{talent.id}}"><img class="img-responsive talent-topimage" src="{{talentMediaUrl}}{{talent.id}}/{{talent.topimage}}" /></a>
+                        <h3 class="talent-name"> {{ talent.name }}</h3>
+                        <div class="talent-stats">
+                            <span class="talent-label">Age: </span> {{ talent.age }}  <span class="talent-label">Sex: </span> {{ talent.sex }} <br>
+                            <span class="talent-label">Ethnicity: </span> {{ talent.ethnicity }} <br>
+                            <span class="talent-label">Languages: </span> {{ talent.languages }}
+                        </div>
+                        <div class="talent-tags">
+                            <h5 class="talent-tags-headline"> Personality Tags:</h5>
+                            <span ng-repeat="tag in talent.personality_tags" class="label label-default"> {{tag}}</span>    
+                        </div>
+                    </div>
+                    <!-- End talent Cards -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Testing the Wizard Buttons -->
+    </div><!-- .row -->
+    <a ng-click="formData.page = 3"  href="" class="btn btn-primary">Back</a>
+    <a ng-click="formData.page = 5"  href="" class="btn btn-primary">Next</a>
+</div>
+<div ng-if="formData.page === 5">
+   <fieldset  class="animated fadeIn">
+        <h2>Payment Details</h2>
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="form-group">
+                    <label>Question #1</label>
+                    <input id="fiveOne" ng-model="formData.fiveOne" name="fiveOne" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Question #2</label>
+                    <div class="input-group">
+                        <input id="fiveTwo" ng-model="formData.fiveTwo" name="fiveTwo" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Question #3</label>
+                    <div class="input-group">
+                        <input id="fiveThree" ng-model="formData.fiveThree" name="fiveThree" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a ng-click="formData.page = 4"  href="" class="btn btn-primary">Back</a>
+        <a ng-click="formData.page = 6"  href="" class="btn btn-primary">Next</a>
+    </fieldset>
+    
+</div>
+<div ng-if="formData.page === 6">
+    Page 6 
+    <a ng-click="formData.page = 5"  href="" class="btn btn-primary">Back</a>
+    <a ng-click="formData.page = 'review'"  href="" class="btn btn-primary">Review</a>
+</div>
+<div ng-if="formData.page === 'review'">
+    Review 
+</div>

@@ -82,15 +82,51 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
     data: {}
   }
 })
-.controller('wizardController', ['$scope', 
-  function($scope){
+.controller('wizardController', ['$scope', function($scope){
+    //Initializing formData to gather form Information
     $scope.formData = {};
-    $scope.formData.campaignStyle = '';
+    $scope.formData.campaign = {};
+    $scope.formData.campaign.brand = '';
+    $scope.formData.page = 1;
+    $scope.formData.video = {};
+
+    // handler for radio boxes
+    $scope.$watch('formData.videosetting', function(value){
+      $scope.formData.video.setting = value;
+      $scope.formData.video.settingOptions = 'Select';
+    });
+
+    //clears options ifVideo number is changed later.
+    $scope.clearOptions = function() {
+      if($scope.formData.campaign.videos.options) {
+        $scope.formData.campaign.videos.options = {};
+      }
+    };
+
+    // clears options if Video package type is changed later.
+    $scope.clearPackageOptions = function() {
+      if($scope.formData.campaign.videos.options.number || $scope.formData.campaign.videos.options.timeFrame) {
+        delete $scope.formData.campaign.videos.options.number;
+        delete $scope.formData.campaign.videos.options.timeFrame;
+      }
+    };
+
+    $scope.videoTags = [{name : 'Modern', selected : false }, 
+                        {name : 'Bright', selected : false }, 
+                        {name : 'Funny', selected : false }, 
+                        {name : 'Corporate', selected : false }, 
+                        {name : 'Theatrical', selected : false }, 
+                        {name : 'Inner monologue', selected : false }, 
+                        {name : 'Vintage', selected : false }
+                      ];
+    $scope.selectedVideoTag = [];
   }
 ])
 .controller('talentGalleryController', ['$scope', 'filterHelper', function($scope, filterHelper) {
   $scope.filterText = filterHelper.data;
-  $scope.talentArray = [{ "name" :"Josephine Baker", 
+  $scope.talentMediaUrl = "/public/uploads/users/media/";
+  $scope.talentArray = [{ "id" : 1,
+            "name" :"Josephine Baker", 
             "topimage":"15-0001.jpg", 
             "age" : "25",
             "sex" : "Female",
@@ -98,7 +134,8 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "languages" : "English, Russian, Mandarin",
             "personality_tags" : ["Model", "Actor", "Dancer"],
             },
-            { "name" :"Bob Hope", 
+            { "id" : 2,
+            "name" :"Bob Hope", 
             "topimage":"27-0001.jpg", 
             "age" : "65",
             "sex" : "Male",
@@ -106,7 +143,8 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "languages" : "English, German",
             "personality_tags" : ["Comedian", "Actor" ],
             },
-            { "name" :"Tom Cruise", 
+            { "id" : 3,
+            "name" :"Tom Cruise", 
             "topimage":"19-0001.jpg", 
             "age" : "55",
             "sex" : "Male",
@@ -114,7 +152,8 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "languages" : "English, Cthulu, Scientology",
             "personality_tags" : ["Actor", "Nutjob"],
             },
-            { "name" :"Jennifer Anniston", 
+            { "id" : 4,
+            "name" :"Jennifer Anniston", 
             "topimage":"193-0001.jpg", 
             "age" : "45",
             "sex" : "Female",

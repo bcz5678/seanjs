@@ -33,14 +33,27 @@
                 </div>
             </div>
             <div class="form-group">
+                <label>General Attire Requirments</label>
+                <div class="input-group">
+                    <select id="videoAttire" ng-model="formData.videoAttire" name="videoAttire" chosen class="chosen-select">
+                        <option value="">Select</option>
+                        <option value="corporate">Corporate</option>
+                        <option value="sporting">Sportng</option>
+                        <option value="medical">Medical (i.e. scrubs,lab coat)</option>
+                        <option value="businessCasual">Business Casual</option>
+                        <option value="nightclub">Nightclub</option>
+                        <option value="swimwear">Swimwear</option>
+                        <option value="outdoors">Outdoors (hiking, camping)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
                 <label>Purpose of the Video? (i.e. Educational, Biography, Entertaining, Viral, Corporate)</label>
                 <input id="videoPurpose" ng-model="formData.video.purpose" name="videoPurpose" type="text" class="form-control">
             </div>
             <div class="form-group">
-                <label>Question #2</label>
-                <div class="input-group">
-                	<input id="twoTwo" ng-model="formData.twoTwo" name="twoTwo" class="form-control">
-				</div>
+                <label>General Prop/Product requirements</label>
+                    <input id="videoProps" ng-model="formData.video.props" name="videoProps"  type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label>Question #3</label>
