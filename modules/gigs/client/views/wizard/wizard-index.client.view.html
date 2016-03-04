@@ -352,10 +352,16 @@
                 <div class="row">
                 <h2>Models</h2>
 
-
                     <!-- Start talent Cards -->
                     <div class="col-md-3 talent-card" ng-repeat="talent in talentArray">
-                        <a href="{{talent.id}}"><img class="img-responsive talent-topimage" src="{{talentMediaUrl}}{{talent.id}}/{{talent.topimage}}" /></a>
+                        <video id="my-video-{{ talent.id }}" class="video-js" loop preload="false" poster="{{talentMediaUrl}}{{talent.id}}/{{talent.topimage}}" data-setup="{}">
+                            <source src="{{ getVideoUrl(talent.id, 'test.mp4') }}" type='video/mp4'>
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                            </p>
+                            
+                        </video>
                         <h3 class="talent-name"> {{ talent.name }}</h3>
                         <div class="talent-stats">
                             <span class="talent-label">Age: </span> {{ talent.age }}  <span class="talent-label">Sex: </span> {{ talent.sex }} <br>

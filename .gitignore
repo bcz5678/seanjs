@@ -21,6 +21,7 @@ npm-debug.log
 # ======================
 public/dist/
 public/uploads/users/profile/*
+public/uploads/users/media/*
 config/env/local.js
 *.pem
 

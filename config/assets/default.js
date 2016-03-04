@@ -5,7 +5,8 @@ module.exports = {
     lib: {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
+        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/videojs/video-js.css'
       ],
       js: [
         'public/lib/jquery/dist/jquery.min.js',
@@ -19,6 +20,8 @@ module.exports = {
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'https://www.google.com/recaptcha/api.js',
+        'public/lib/videojs/video.js',
+        'public/lib/videojs/videojs-ie8.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

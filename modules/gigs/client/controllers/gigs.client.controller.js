@@ -125,6 +125,10 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
 .controller('talentGalleryController', ['$scope', 'filterHelper', function($scope, filterHelper) {
   $scope.filterText = filterHelper.data;
   $scope.talentMediaUrl = "/uploads/users/media/";
+  $scope.getVideoUrl = function(talentId, videoId) {
+    return $scope.talentMediaUrl + talentId + '/' + videoId;
+  };
+
   $scope.talentArray = [{ "id" : 15,
             "name" :"Josephine Baker", 
             "topimage":"15-0001.jpg", 
@@ -299,6 +303,8 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
 
       console.log($scope.search);
 
-     }
+     };
+
+  
 
 }]);
