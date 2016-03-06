@@ -249,7 +249,7 @@
 </div>
 <div ng-if="formData.page === 4">
     <div class="row">
-        <div id="talent-filters" class="col-md-3 animated fadeIn" ng-controller="filterController">
+        <div id="talent-filters" class="col-md-2 animated fadeIn" ng-controller="filterController">
             {{ filt}}
         
             <h3>Filters</h3>
@@ -347,15 +347,15 @@
         </div>
 
 
-        <div id="talent-gallery" class="col-md-9 animated fadeInRight" ng-controller="talentGalleryController">
+        <div id="talent-gallery" class="col-md-10 animated fadeInRight" ng-controller="talentGalleryController">
             <div class="container-fluid">
                 <div class="row">
                 <h2>Models</h2>
 
                     <!-- Start talent Cards -->
                     <div class="col-md-3 talent-card" ng-repeat="talent in talentArray">
-                        <video id="my-video-{{ talent.id }}" class="video-js" loop preload="false" poster="{{talentMediaUrl}}{{talent.id}}/{{talent.topimage}}" data-setup="{}">
-                            <source src="{{ getVideoUrl(talent.id, 'test.mp4') }}" type='video/mp4'>
+                        <video id="my-video-{{ talent.id }}" class="video-js vjs-default-skin" width="200" loop preload="false" poster="{{talentMediaUrl}}{{talent.id}}/{{talent.topimage}}" ng-mouseenter="videoEnter($event)" ng-mouseleave="videoLeave($event)">
+                            <source ng-attr-src="{{ getVideoUrl(talent.id, 'test.mp4') }}" type='video/mp4'>
                             <p class="vjs-no-js">
                                 To view this video please enable JavaScript, and consider upgrading to a web browser that
                                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>

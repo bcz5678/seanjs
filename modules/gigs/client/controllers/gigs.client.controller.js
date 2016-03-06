@@ -125,8 +125,20 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
 .controller('talentGalleryController', ['$scope', 'filterHelper', function($scope, filterHelper) {
   $scope.filterText = filterHelper.data;
   $scope.talentMediaUrl = "/uploads/users/media/";
+  $scope.getVideoUrl = function(talentId, imageId) {
+    return $scope.talentMediaUrl + talentId + '/' + imageId;
+  };
+
   $scope.getVideoUrl = function(talentId, videoId) {
     return $scope.talentMediaUrl + talentId + '/' + videoId;
+  };
+
+  $scope.videoEnter = function($event) {
+     console.log($event);
+  };
+
+  $scope.videoLeave = function($event) {
+      console.log($event);
   };
 
   $scope.talentArray = [{ "id" : 15,
@@ -304,7 +316,5 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
       console.log($scope.search);
 
      };
-
-  
-
-}]);
+  }
+]);
