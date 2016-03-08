@@ -1,0 +1,29 @@
+<section ng-controller="talentsController" ng-init="findOne()">
+  <div class="page-header">
+    <h1>{{ talent.user.firstName }} {{ talent.user.lastName }}</h1>
+    <ul>
+      <li>{{ talent.user.email }}</li>
+      <li>{{ talent.address }}</li>
+      <li ng-if="talent.address_2">{{ talent.address_2 }}</li>
+      <li>{{ talent.city }}, {{ talent.state }} {{ talent.zipCode }}</li>
+      <li>{{ talent.country }}</li>
+      <li>{{ talent.phoneHome }}</li>
+      <li>{{ talent.phoneMobile }}</li>
+      <li>{{ talent.phoneOffice }}</li>
+      <li>{{ talent.fax }}</li>
+    </ul>
+  </div>
+  <div class="pull-right" ng-show="authentication.user.id == talent.user.id || (authentication.user.roles.indexOf('admin') && authentication.user.roles.indexOf('admin') != -1) ">
+    <a class="btn btn-primary" ui-sref="talents.edit({talentId: talent.id})">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="remove(talent);">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      <span ng-bind="talent.created | date:'mediumDate'"></span>
+    </em>
+  </small>
+</section>

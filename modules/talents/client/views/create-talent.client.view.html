@@ -1,0 +1,154 @@
+<section ng-controller="talentsController">
+  <div class="page-header">
+    <h1>Create Your Talent Profile</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="talentForm" class="form-horizontal" ng-submit="create(talentForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="mainDescription">Describe Yourself</label>
+          <input name="mainDescription" type="text" ng-model="mainDescription" id="mainDescription" class="form-control" placeholder="mainDescription" required>
+          <div ng-messages="talentForm.mainDescription.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Description is Required</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="headline_1">Headline #1</label>
+          <input name="headline_1" type="text" ng-model="headline_1" id="headline_1" class="form-control" placeholder="headline_1" >
+          <div ng-messages="talentForm.headline_1.$error" role="alert">
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="headline_2">Headline #2</label>
+          <input name="headline_2" type="text" ng-model="headline_2" id="headline_2" class="form-control" placeholder="headline_2" >
+          <div ng-messages="talentForm.headline_2.$error" role="alert">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="input-group ">
+              <div class="radio radio-info radio-inline">
+                  <input type="radio" ng-model="gender" name="gender" value="male" >
+                  <label>Male</label>
+              </div>
+              <div class="radio radio-info radio-inline">
+                  <input type="radio" ng-model="gender" name="gender"  value="female" >
+                  <label>Female</label>
+              </div>
+          </div>
+          <div ng-messages="talentForm.gender.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Gender is required.</p>
+            </div>
+        </div>
+        <div class="form-group" show-errors>
+            <label for="age">Age</label>
+            <div class="input-group">
+                <select id="age" ng-model="age" name="age" class="chosen-select">
+                    <option value="">Select</option>
+                    <option ng-repeat="n in ageRange" value="{{ n }}">{{ n }}</option>
+                </select>
+            </div>
+            <div ng-messages="talentForm.age.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Age is required.</p>
+            </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="height">Height</label>
+          <div class="input-group">
+              <select id="height" ng-model="height" name="height" class="chosen-select">
+                  <option value="">Select</option>
+                  <option ng-repeat="n in heightArray" value="{{n}}">{{ n }}</option>
+              </select>
+          </div>
+          <div ng-messages="talentForm.height.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Height is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="weight">Weight</label>
+           <div class="input-group">
+              <select id="weight" ng-model="weight" name="weight" class="chosen-select">
+                  <option value="">Select</option>
+                  <option ng-repeat="n in weightRange" value="{{n}}">{{ n }}</option>
+              </select>
+          </div>
+          <div ng-messages="talentForm.weight.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Weight is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="hairColor">Hair Color</label>
+           <div class="input-group">
+              <select id="hairColor" ng-model="hairColor" name="hairColor" class="chosen-select">
+                  <option value="">Select</option>
+                  <option ng-repeat="n in hairColorArray" value="{{n}}">{{ n }}</option>
+              </select>
+          </div>
+          <div ng-messages="talentForm.hairColor.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Hair Color is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="hairType">Hair Type</label>
+           <div class="input-group">
+              <select id="hairType" ng-model="hairType" name="hairType" class="chosen-select">
+                  <option value="">Select</option>
+                  <option ng-repeat="n in hairTypeArray" value="{{n}}">{{ n }}</option>
+              </select>
+          </div>
+          <div ng-messages="talentForm.hairType.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Hair Type is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="ethnicity">Ethnicity</label>
+           <div class="input-group">
+              <select id="ethnicity" ng-model="ethnicity" name="ethnicity" class="chosen-select">
+                  <option value="">Select</option>
+                  <option ng-repeat="n in ethnicityArray" value="{{n}}">{{ n }}</option>
+              </select>
+          </div>
+          <div ng-messages="talentForm.ethnicity.$error" role="alert">
+            <p class="help-block error-text" ng-message="required"> Ethnicity is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="languages">Languages</label>
+           <div class="input-group">
+              <select id="languages" ng-model="languages" name="languages" class="chosen-select">
+                  <option value="">Select</option>
+                  <option ng-repeat="n in languagesArray" value="{{n}}">{{ n }}</option>
+              </select>
+          </div>
+          <div ng-messages="talentForm.languages.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Languages is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="characterTags">Character Tags</label>
+           <div class="input-group">
+              <select id="characterTags" ng-model="characterTags" name="characterTags" class="chosen-select">
+                  <option value="">Select</option>
+                  <option ng-repeat="n in characterTagsArray" value="{{n}}">{{ n }}</option>
+              </select>
+          </div>
+          <div ng-messages="talentForm.characterTags.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Character Tags is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="topimage">Image File Name</label>
+          <input name="topimage" type="text" ng-model="topimage" id="topimage" class="form-control" placeholder="topimage" >
+          <div ng-messages="talentForm.topimage.$error" role="alert">
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="profileVideoName">Profile Video Name</label>
+          <input name="profileVideoName" type="text" ng-model="profileVideoName" id="profileVideoName" class="form-control" placeholder="profileVideoName" >
+          <div ng-messages="talentForm.profileVideoName.$error" role="alert">
+          </div>
+        </div> 
+      </fieldset>
+    </form>
+  </div>
+</section>

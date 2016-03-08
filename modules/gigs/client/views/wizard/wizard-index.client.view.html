@@ -268,8 +268,8 @@
              <div class="form-group">
                 <label>Age Range</label>
                 <div class="input-group">
-                    <select id="ageRange" ng-model="filter.age" name="ageRange" chosen class="chosen-select">
-                        <option value="">Select</option>
+                    <select data-placeholder="Select Age Ranges" id="ageRange" ng-model="filter.age" name="ageRange" chosen class="chosen-select">
+                        <option value=""></option>
                         <option ng-repeat="age in filter.ages" value='{{age}}'>{{age}}</option>
                     </select>
                 </div>
@@ -354,23 +354,22 @@
 
                     <!-- Start talent Cards -->
                     <div class="col-md-3 talent-card" ng-repeat="talent in talentArray">
-                        <video id="my-video-{{ talent.id }}" class="video-js vjs-default-skin" width="200" loop preload="false" poster="{{talentMediaUrl}}{{talent.id}}/{{talent.topimage}}" ng-mouseenter="videoEnter($event)" ng-mouseleave="videoLeave($event)">
-                            <source ng-attr-src="{{ getVideoUrl(talent.id, 'test.mp4') }}" type='video/mp4'>
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                            </p>
-                            
+                        <video videojs id="my-video-{{ talent.id }}" class="video-js vjs-default-skin" poster="{{ getImageUrl(talent.id, talent.topimage) }}" src="{{ getVideoUrl(talent.id, talent.profileVideoName) }}" type='video/mp4'>
                         </video>
-                        <h3 class="talent-name"> {{ talent.name }}</h3>
-                        <div class="talent-stats">
-                            <span class="talent-label">Age: </span> {{ talent.age }}  <span class="talent-label">Sex: </span> {{ talent.sex }} <br>
-                            <span class="talent-label">Ethnicity: </span> {{ talent.ethnicity }} <br>
-                            <span class="talent-label">Languages: </span> {{ talent.languages }}
-                        </div>
-                        <div class="talent-tags">
-                            <h5 class="talent-tags-headline"> Personality Tags:</h5>
-                            <span ng-repeat="tag in talent.personality_tags" class="label label-default"> {{tag}}</span>    
+                        <div class="video_list-items row">
+                            <div class="col-md-6"> 
+                                <p>{{ talent.name }}</p>
+                                <p>Age: {{ talent.age }} </p>
+                            </div>
+                            <div class="col-md-6">
+                                
+                                <p>Ethnicity: {{ talent.ethnicity }} </p>
+                                <p>Languages: {{ talent.languages }} </p>
+                            </div>
+                            <div class="col-md-12">
+                                <h5 class="talent-tags-headline"> Personality Tags:</h5>
+                                <span ng-repeat="tag in talent.personality_tags" class="label label-default"> {{tag}}</span>    
+                            </div>
                         </div>
                     </div>
                     <!-- End talent Cards -->

@@ -1,0 +1,22 @@
+<section ng-controller="talentsController" ng-init="find()">
+  <div class="page-header">
+    <h1>talents</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="talent in talents" ui-sref="talents.view({talentId: talent.id})" class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="talent.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="talent.user.username"></span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="talent.first_name"></h4>
+
+      {{ talent.last_name }}
+      <p class="list-group-item-text" ng-bind="talent.content"></p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="!talents.length">
+    No talents yet, why don't you <a ui-sref="talents.create">create one</a>?
+  </div>
+</section>

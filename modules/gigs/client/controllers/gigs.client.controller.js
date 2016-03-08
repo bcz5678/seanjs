@@ -125,25 +125,18 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
 .controller('talentGalleryController', ['$scope', 'filterHelper', function($scope, filterHelper) {
   $scope.filterText = filterHelper.data;
   $scope.talentMediaUrl = "/uploads/users/media/";
-  $scope.getVideoUrl = function(talentId, imageId) {
-    return $scope.talentMediaUrl + talentId + '/' + imageId;
-  };
-
   $scope.getVideoUrl = function(talentId, videoId) {
     return $scope.talentMediaUrl + talentId + '/' + videoId;
   };
 
-  $scope.videoEnter = function($event) {
-     console.log($event);
-  };
-
-  $scope.videoLeave = function($event) {
-      console.log($event);
+   $scope.getImageUrl = function(talentId, imageId) {
+    return $scope.talentMediaUrl + talentId + '/' + imageId;
   };
 
   $scope.talentArray = [{ "id" : 15,
             "name" :"Josephine Baker", 
             "topimage":"15-0001.jpg", 
+            "profileVideoName" : "15-profile.mp4",
             "age" : "25",
             "sex" : "Female",
             "ethnicity" : "Black",
@@ -152,7 +145,8 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             },
             { "id" : 27,
             "name" :"Bob Hope", 
-            "topimage":"27-0001.jpg", 
+            "topimage":"27-0001.jpg",
+            "profileVideoName" : "test.mp4", 
             "age" : "65",
             "sex" : "Male",
             "ethnicity" : "White",
@@ -162,6 +156,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             { "id" : 19,
             "name" :"Tom Cruise", 
             "topimage":"19-0001.jpg", 
+            "profileVideoName" : "test2.mp4",
             "age" : "55",
             "sex" : "Male",
             "ethnicity" : "White",
@@ -171,6 +166,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             { "id" : 193,
             "name" :"Jennifer Anniston", 
             "topimage":"193-0001.jpg", 
+            "profileVideoName" : "193-profile.mp4",
             "age" : "45",
             "sex" : "Female",
             "ethnicity" : "White",
@@ -202,7 +198,9 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
   $scope.filter.hairColors  = [ "Blonde", 
                                 "Brunette", 
                                 "Red", 
-                                "Gray"
+                                "Gray",
+                                'Salt and Pepper', 
+                                'None'
                               ];
 
 

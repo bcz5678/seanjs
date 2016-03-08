@@ -6,11 +6,13 @@ module.exports = {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/video.js/dist/video-js/video-js.css'
+        'public/lib/video.js/dist/video-js/video-js.css',
+        'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.min.css'
       ],
       js: [
         'public/lib/jquery/dist/jquery.min.js',
         'public/lib/angular/angular.js',
+        'public/lib/underscore/underscore.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
         'public/lib/angular-messages/angular-messages.js',
@@ -21,7 +23,8 @@ module.exports = {
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'https://www.google.com/recaptcha/api.js',
         'public/lib/video.js/dist/video-js/video.js',
-        'public/lib/vjs-video/dist/vjs-video.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js',
+        'public/lib/chosen/angular-chosen.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
