@@ -1,8 +1,17 @@
 'use strict';
 
 
-angular.module('talents').controller('talentsController', ['$scope', 'talents',
-	function($scope, talents) {
+angular.module('talents').controller('talentsController', ['$scope', '$http', 'talents', 'Authentication', 
+	function($scope, $http, talents, Authentication) {
+
+		$scope.authentication = Authentication;
+
+		$http.get("api/talent/" + $scope.authentication.user.id).success(function(profile){
+	      $scope.talentProfile = profile;
+	    });
+
+		$scope.togglePhotoUpload = false;
+		$scope.toggleMediaUpload = false;
 
 		$scope.ageRange = _.range(18, 99);
 		$scope.weightRange = _.range(80, 350);

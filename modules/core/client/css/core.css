@@ -1151,3 +1151,19 @@ a.compose-mail {
 .table-mail a{
   color: #777;
 }
+
+#addPhoto {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 75px;
+  height: 75px;
+}
+
+#addMedia {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 75px;
+  height: 75px;
+}

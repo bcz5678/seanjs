@@ -8,12 +8,12 @@ angular.module('talents').run(['Menus',
       title: 'Profile',
       state: 'talents',
       type: 'dropdown',
-      roles: ['user']
+      roles: ['*']
     });
 
     // Add the dropdown create item
     Menus.addSubMenuItem('topbar', 'talents', {
-      title: 'Create Profile',
+      title: 'Start Your Profile',
       state: 'talents.create',
       roles: ['user']
     });
