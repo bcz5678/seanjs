@@ -1,95 +1,204 @@
 <section ng-controller="talentsController">
-    <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-10 col-md-offset-1">
     <form name="talentForm" class="form-horizonal" ng-submit="create(talentForm.$valid)" novalidate>
         <div class="row">
-          <div class="col-md-5">
-            <a href="" ng-click="togglePhotoUpload = !togglePhotoUpload">
-              <img  id="addPhoto" src="./modules/core/client/img/add-photo.png" title="Add/Edit your Main Photo" alt="Add/Edit your Main Photo"/>
-            </a>
-            <div ng-show="toggleUpload">
-              Upload form for picture
-            </div>
+          <!-- Main Pic -->
+          <div class="col-md-7">
+              
+            <div class="row">
+               <!-- Media Carousel -->
+                <a href="" ng-click="toggleMediaUpload = !toggleMediaUpload">
+                  <img  id="addMedia" src="./modules/core/client/img/add-media.png" title="Add/Edit your Photos and Videos" alt="Add/Edit your Photos and Videos"/>
+                </a>
+                <div ng-show="toggleMediaUpload">
+                  Upload form for Media
+                </div>
 
-            <img ng-if="!talentProfile.topimage" src="/uploads/users/media/default-avatar.png" />
-            <img ng-if="talentProfile.topimage" src="{{talent.baseMediaUrl }}{{talentProfile.user.id}}/{{talentProfile.topimage" />
-
-            <div class="form-group" show-errors>
-              <label for="topimage">Image File Name</label>
-              <input name="topimage" type="text" ng-model="topimage" id="topimage" class="form-control" placeholder="topimage" >
-              <div ng-messages="talentForm.topimage.$error" role="alert">
-              </div>
+                        <!-- Indicators -->
+                <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
+    <div class='carousel-outer'>
+        <!-- Wrapper for slides -->
+        <div class='carousel-inner'>
+            <div class='item active'>
+              <img ng-if="!talentProfile.topimage" src="/uploads/users/media/default-avatar.png" />
+              <img ng-if="talentProfile.topimage" src="/uploads/users/media/{{talentProfile.user.id}}/{{talentProfile.topimage}}" />
             </div>
-          </div>
-          <div class="col-md-2" style="background-color: blue;">
-            <a href="" ng-click="toggleMediaUpload = !toggleMediaUpload">
-              <img  id="addMedia" src="./modules/core/client/img/add-media.png" title="Add/Edit your Photos and Videos" alt="Add/Edit your Photos and Videos"/>
-            </a>
-            vertical carousel
-            <div ng-show="toggleMediaUpload">
-              Upload form for Media
+            <div class='item'>
+                <img src='http://placehold.it/400x200&text=slide2' alt='' />
+            </div>
+            <div class='item'>
+                <img src='http://placehold.it/400x200&text=slide3' alt='' />
+            </div>
+                
+            <div class='item'>
+                <img src='http://placehold.it/400x200&text=slide4' alt='' />
+            </div>
+            <div class='item'>
+                <img src='http://placehold.it/400x200&text=slide5' alt='' />
+            </div>
+            <div class='item'>
+                <img src='http://placehold.it/400x200&text=slide6' alt='' />
+            </div>
+            
+            <div class='item'>
+                <img src='http://placehold.it/400x200&text=slide7' alt='' />
+            </div>
+            <div class='item'>
+                <img src='http://placehold.it/400x200&text=slide8' alt='' />
+            </div>
+            <div class='item'>
+                <img src='http://placehold.it/400x200&text=slide9' alt='' />
+            </div>
+        </div>
+            
+        <!-- Controls -->
+        <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
+            <span class='glyphicon glyphicon-chevron-left'></span>
+        </a>
+        <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
+            <span class='glyphicon glyphicon-chevron-right'></span>
+        </a>
+    </div>
+    
+    <!-- Indicators -->
+    <ol class='carousel-indicators'>
+        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img ng-if="!talentProfile.topimage" src="/uploads/users/media/default-avatar.png" />
+              <img ng-if="talentProfile.topimage" src="/uploads/users/media/{{talentProfile.user.id}}/{{talentProfile.topimage}}" /></li>
+        <li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/00x50&text=slide2' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='3'><img src='http://placehold.it/100x50&text=slide4' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='4'><img src='http://placehold.it/100x50&text=slide5' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='5'><img src='http://placehold.it/100x50&text=slide6' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='6'><img src='http://placehold.it/100x50&text=slide7' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='7'><img src='http://placehold.it/100x50&text=slide8' alt='' /></li>
+        <li data-target='#carousel-custom' data-slide-to='8'><img src='http://placehold.it/100x50&text=slide9' alt='' /></li>
+    </ol>
+</div>
             </div>
           </div>
           
-          <div class="col-md-5" style="background-color: green;">
-            <h3>displayName</h3>
-            <label for="headline_1" class="col-md-4" ng-if="!talentProfile.headline_1">SO, WHO ARE YOU?</label>
-            <div class="col-md-8">
-                <textarea name="headline_1" rows="2" ng-model="headline_1" id="headline_1" class="form-control" placeholder="GIVE US YOUR BEST LINE" ></textarea>
-                <div ng-messages="talentForm.headline_1.$error" role="alert">
-                </div>
+          <!-- Profile Main -->
+          <div class="col-md-5">
+
+          <!-- Display Name -->
+            <h1 class="displayName">{{ talentProfile.user.displayName}}</h1>
+
+          <!-- Headline and Description Boxes -->
+            <div class="profileEditHeader">
+              <a href="" ng-click="editHeadline = !editHeadline"><i class="fa fa-pencil-square-o"></i></a>
+              Edit Descriptions
             </div>
-            <div class="form-group" show-errors>
-              <label for="mainDescription" class="col-md-4" ng-if="!talentProfile.mainDescription">DESCRIBE YOURSELF</label>
-              <div class="col-md-8">
-                <textarea name="mainDescription" type= ng-model="mainDescription" id="mainDescription" class="form-control" placeholder="TELL US YOUR STORY!" required rows="5"></textarea>
-                <div ng-messages="talentForm.mainDescription.$error" role="alert">
-                  <p class="help-block error-text" ng-message="required">Description is Required</p>
+
+            <div ng-if="talentProfile.headline_1" class="headline_1">
+              <h3 ng-if="!$parent.editHeadline">
+                  {{ talentProfile.headline_1 }} 
+              </h3> 
+            </div>
+            <div ng-if="talentProfile.headline_1" class="mainDescription">
+              <span ng-if="!$parent.editHeadline">
+                  {{ talentProfile.mainDescription }} 
+              </span> 
+            </div>
+
+            <div class="row" ng-if="(!talentProfile.headline_1  || editHeadline)">
+              <div  class="row">
+                <div class="col-md-8" >
+                    <textarea name="headline_1" rows="2" ng-model="headline_1" id="headline_1" class="form-control" placeholder="{{talentProfile.headline_1  && talentProfile.headline_1 || 'GIVE US YOUR BEST LINE'}}" ></textarea>
                 </div>
+                <label for="headline_1" class="col-md-4" >SO, WHO ARE YOU?</label>
+              </div>
+
+              <div class="row" >
+                <div class="col-md-8">
+                  <textarea name="mainDescription" ng-model="mainDescription" id="mainDescription" class="form-control" placeholder="{{talentProfile.mainDescription  && talentProfile.mainDescription || 'TELL US YOUR STORY!' }}" required rows="5"></textarea>
+                </div>
+                <label for="mainDescription" class="col-md-4">DESCRIBE YOURSELF</label>
               </div>
             </div>
 
+
         <!--- inline form group -->
-        <div class="row">
-            <label for="gender" class="col-md-2">GENDER</label>
-            <div class="input-group col-md-10">
-                <div class="radio radio-info radio-inline">
-                    <input type="radio" ng-model="gender" name="gender" value="male" >
-                    <label>Male</label>
-                </div>
-                <div class="radio radio-info radio-inline">
-                    <input type="radio" ng-model="gender" name="gender"  value="female" >
-                    <label>Female</label>
-                </div>
-            </div>
+
+        <div class="profileEditHeader">
+              <a href="" ng-click="editVitals = !editVitals"><i class="fa fa-pencil-square-o"></i></a>
+              Edit Vital Info 
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <label for="age" class="col-md-6">AGE</label>
-              <div class="input-group col-md-6">
-                <select id="age" ng-model="age" name="age" class="chosen-select">
-                    <option value="">Select</option>
-                    <option ng-repeat="n in ageRange" value="{{ n }}">{{ n }}</option>
-                </select>
+
+        <div class="row" ng-if="!editVitals">
+          <div ng-if="talentProfile.gender" class="gender">
+            <label for="gender">Gender: </label>
+            <span >
+              {{ talentProfile.gender }} 
+            </span> 
+          </div>
+
+          <div ng-if="talentProfile.age" class="age">
+            <label for="age">Age: </label>
+            <span >
+              {{ talentProfile.age }} 
+            </span> 
+          </div>
+
+          <div ng-if="talentProfile.height" class="height">
+            <label for="height">Height: </label>
+            <span >
+              {{ talentProfile.height }} 
+            </span> 
+          </div>
+
+          <div ng-if="talentProfile.weight" class="weight">
+            <label for="weight">Weight: </label>
+            <span >
+              {{ talentProfile.weight }} 
+            </span> 
+          </div>
+        </div>
+
+
+
+        <div class="row" ng-if="editVitals">
+          <div class="row">
+              <label for="gender" class="col-md-2">GENDER</label>
+              <div class="input-group col-md-10">
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" ng-model="gender" name="gender" value="male" >
+                      <label>Male</label>
+                  </div>
+                  <div class="radio radio-info radio-inline">
+                      <input type="radio" ng-model="gender" name="gender"  value="female" >
+                      <label>Female</label>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <label for="age" class="col-md-6">AGE</label>
+                <div class="input-group col-md-6">
+                  <select id="age" ng-model="age" name="age" class="chosen-select" ng-selected="talentProfile.age">
+                      <option value="">Select</option>
+                      <option ng-repeat="n in ageRange" value="{{ n }}">{{ n }}</option>
+                  </select>
+                </div> 
               </div> 
-            </div> 
-            <div class="col-md-6">
-              <label for="height" class="col-md-6">HEIGHT</label>
-              <div class="input-group col-md-6">
-                  <select id="height" ng-model="height" name="height" class="chosen-select">
-                    <option value="">Select</option>
-                    <option ng-repeat="n in heightArray" value="{{n}}">{{ n }}</option>
-                  </select> 
+              <div class="col-md-6">
+                <label for="height" class="col-md-6">HEIGHT</label>
+                <div class="input-group col-md-6">
+                    <select id="height" ng-model="height" name="height" class="chosen-select">
+                      <option value="">Select</option>
+                      <option ng-repeat="n in heightArray" value="{{n}}">{{ n }}</option>
+                    </select> 
+                </div>
               </div>
             </div>
-          </div>
-           <div class="row">
-            <div class="col-md-6">
-              <label for="weight" class="col-md-6">WEIGHT</label>
-              <div class="input-group col-md-6">
-                <select id="weight" ng-model="weight" name="weight" class="chosen-select">
-                  <option value="">Select</option>
-                  <option ng-repeat="n in weightRange" value="{{n}}">{{ n }}</option>
-                </select>
+             <div class="row">
+              <div class="col-md-6">
+                <label for="weight" class="col-md-6">WEIGHT</label>
+                <div class="input-group col-md-6">
+                  <select id="weight" ng-model="weight" name="weight" class="chosen-select">
+                    <option value="">Select</option>
+                    <option ng-repeat="n in weightRange" value="{{n}}">{{ n }}</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>

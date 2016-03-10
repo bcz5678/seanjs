@@ -1166,4 +1166,66 @@ a.compose-mail {
   left: 0px;
   width: 75px;
   height: 75px;
+  z-index: 1000;
+}
+
+.displayName {
+  font-family: 'Raleway', sans-serif;
+  font-weight:700;
+  color:#ff4e00;
+  margin-left:15px;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.profileEditHeader {
+  font-family: 'Raleway', sans-serif;
+  font-weight:700;
+  color: #bbb;
+  margin-left:15px;
+  margin-top:5px;
+  margin-bottom:5px;
+  border-bottom: 1px #ddd solid;
+}
+
+.fa-pencil-square-o {
+ color: #bbb;
+}
+
+#carousel-example-generic {
+    margin: 20px auto;
+}
+
+#carousel-custom {
+    margin: 20px auto;
+}
+#carousel-custom .carousel-indicators {
+    margin: 10px 0 0;
+    overflow: auto;
+    position: static;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%;
+}
+#carousel-custom .carousel-indicators li {
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: inline-block;
+    height: auto;
+    margin: 0 !important;
+    width: auto;
+}
+#carousel-custom .carousel-indicators li img {
+    display: block;
+    opacity: 0.5;
+}
+#carousel-custom .carousel-indicators li.active img {
+    opacity: 1;
+}
+#carousel-custom .carousel-indicators li:hover img {
+    opacity: 0.75;
+}
+#carousel-custom .carousel-outer {
+    position: relative;
 }

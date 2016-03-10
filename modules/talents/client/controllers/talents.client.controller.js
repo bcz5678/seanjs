@@ -13,6 +13,9 @@ angular.module('talents').controller('talentsController', ['$scope', '$http', 't
 		$scope.togglePhotoUpload = false;
 		$scope.toggleMediaUpload = false;
 
+		$scope.editHeadline = false;
+		$scope.editVitals = false;
+
 		$scope.ageRange = _.range(18, 99);
 		$scope.weightRange = _.range(80, 350);
 		$scope.heightArray = [	"4'0", "4'1", "4'2", "4'3", "4'4", "4'5", "4'6", "4'7", "4'8", "4'9", "4'10", "4'11",
