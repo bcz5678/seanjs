@@ -1,7 +1,14 @@
 <section ng-controller="talentsController">
+
+ 
   <div class="col-md-10 col-md-offset-1">
     <form name="talentForm" class="form-horizonal" ng-submit="create(talentForm.$valid)" novalidate>
         <div class="row">
+
+          <div id="uploadOverlay" class="fadein fadeout" ng-show="toggleMediaUpload">
+            Upload form for Media
+          </div>
+
           <!-- Main Pic -->
           <div class="col-md-7">
               
@@ -10,70 +17,35 @@
                 <a href="" ng-click="toggleMediaUpload = !toggleMediaUpload">
                   <img  id="addMedia" src="./modules/core/client/img/add-media.png" title="Add/Edit your Photos and Videos" alt="Add/Edit your Photos and Videos"/>
                 </a>
-                <div ng-show="toggleMediaUpload">
-                  Upload form for Media
-                </div>
 
-                        <!-- Indicators -->
-                <div id='carousel-custom' class='carousel slide' data-ride='carousel'>
-    <div class='carousel-outer'>
-        <!-- Wrapper for slides -->
-        <div class='carousel-inner'>
-            <div class='item active'>
-              <img ng-if="!talentProfile.topimage" src="/uploads/users/media/default-avatar.png" />
-              <img ng-if="talentProfile.topimage" src="/uploads/users/media/{{talentProfile.user.id}}/{{talentProfile.topimage}}" />
-            </div>
-            <div class='item'>
-                <img src='http://placehold.it/400x200&text=slide2' alt='' />
-            </div>
-            <div class='item'>
-                <img src='http://placehold.it/400x200&text=slide3' alt='' />
-            </div>
-                
-            <div class='item'>
-                <img src='http://placehold.it/400x200&text=slide4' alt='' />
-            </div>
-            <div class='item'>
-                <img src='http://placehold.it/400x200&text=slide5' alt='' />
-            </div>
-            <div class='item'>
-                <img src='http://placehold.it/400x200&text=slide6' alt='' />
-            </div>
-            
-            <div class='item'>
-                <img src='http://placehold.it/400x200&text=slide7' alt='' />
-            </div>
-            <div class='item'>
-                <img src='http://placehold.it/400x200&text=slide8' alt='' />
-            </div>
-            <div class='item'>
-                <img src='http://placehold.it/400x200&text=slide9' alt='' />
-            </div>
-        </div>
-            
-        <!-- Controls -->
-        <a class='left carousel-control' href='#carousel-custom' data-slide='prev'>
-            <span class='glyphicon glyphicon-chevron-left'></span>
-        </a>
-        <a class='right carousel-control' href='#carousel-custom' data-slide='next'>
-            <span class='glyphicon glyphicon-chevron-right'></span>
-        </a>
-    </div>
-    
-    <!-- Indicators -->
-    <ol class='carousel-indicators'>
-        <li data-target='#carousel-custom' data-slide-to='0' class='active'><img ng-if="!talentProfile.topimage" src="/uploads/users/media/default-avatar.png" />
-              <img ng-if="talentProfile.topimage" src="/uploads/users/media/{{talentProfile.user.id}}/{{talentProfile.topimage}}" /></li>
-        <li data-target='#carousel-custom' data-slide-to='1'><img src='http://placehold.it/00x50&text=slide2' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='2'><img src='http://placehold.it/100x50&text=slide3' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='3'><img src='http://placehold.it/100x50&text=slide4' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='4'><img src='http://placehold.it/100x50&text=slide5' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='5'><img src='http://placehold.it/100x50&text=slide6' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='6'><img src='http://placehold.it/100x50&text=slide7' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='7'><img src='http://placehold.it/100x50&text=slide8' alt='' /></li>
-        <li data-target='#carousel-custom' data-slide-to='8'><img src='http://placehold.it/100x50&text=slide9' alt='' /></li>
-    </ol>
-</div>
+                  <carousel id="carousel">
+                    <slide class="active" id="carousel-slide-0"><img src="http://placehold.it/350x250/e8117f/fff&amp;text=Product+Main" ></slide>        
+                    <slide id="carousel-slide-1"><img src="http://placehold.it/350x250/00ffff/000&amp;text=Product+Image+2"></slide> 
+                    <slide id="carousel-slide-2"><img src="http://placehold.it/350x250/ff00ff/fff&amp;text=Product+Image+3"></slide>    
+                    <slide id="carousel-slide-3"><img src="http://placehold.it/350x250/ffff00/000&amp;text=Product+Image+4"></slide>     
+                    <slide id="carousel-slide-4"><img src="http://placehold.it/350x250/7B1C8E/fff&amp;text=Product+Image+5"></slide>     
+                    <slide id="carousel-slide-5"><img src="http://placehold.it/350x250/9EF383/000&amp;text=Product+Image+6"></slide>     
+                    <slide id="carousel-slide-6"><img src="http://placehold.it/350x250/D64908/fff&amp;text=Product+Image+7"></slide>     
+                    <slide id="carousel-slide-7"><img src="http://placehold.it/350x250/E3A3A1/000&amp;text=Product+Image+8"></slide>
+                  </carousel>
+                  <carousel id="thumbcarousel">
+                    <slide> 
+                      <div class="item active">
+                        <img data-target="#carousel" data-slide-to="0" src="http://placehold.it/350x250/e8117f/fff&amp;text=Product+Main" class="thumb" ng-click="thumbClick($event)">
+                        <img data-target="#carousel" data-slide-to="1" src="http://placehold.it/350x250/00ffff/000&amp;text=Product+Image+2" class="thumb" ng-click="thumbClick($event)">
+                        <img data-target="#carousel" data-slide-to="2" src="http://placehold.it/350x250/ff00ff/fff&amp;text=Product+Image+3" class="thumb" ng-click="thumbClick($event)">    
+                        <img data-target="#carousel" data-slide-to="3" src="http://placehold.it/350x250/ffff00/000&amp;text=Product+Image+4" class="thumb" ng-click="thumbClick($event)">
+                      </div>
+                    </slide>        
+                    <slide>  
+                      <div class="item"> 
+                        <img data-target="#carousel" data-slide-to="4" src="http://placehold.it/350x250/7B1C8E/fff&amp;text=Product+Image+5" class="thumb" ng-click="thumbClick($event)">     
+                        <img data-target="#carousel" data-slide-to="5" src="http://placehold.it/350x250/9EF383/000&amp;text=Product+Image+6" class="thumb" ng-click="thumbClick($event)">     
+                        <img data-target="#carousel" data-slide-to="6" src="http://placehold.it/350x250/D64908/fff&amp;text=Product+Image+7" class="thumb" ng-click="thumbClick($event)">     
+                        <img data-target="#carousel" data-slide-to="7" src="http://placehold.it/350x250/E3A3A1/000&amp;text=Product+Image+8" class="thumb" ng-click="thumbClick($event)">
+                      </div>
+                    </slide> 
+                  </carousel>
             </div>
           </div>
           
@@ -273,4 +245,5 @@
         </div> 
     </form>
   </div>
+ 
 </section>

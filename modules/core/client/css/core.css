@@ -1188,44 +1188,63 @@ a.compose-mail {
   border-bottom: 1px #ddd solid;
 }
 
-.fa-pencil-square-o {
- color: #bbb;
+ 
+
+
+/* CSS used here will be applied after bootstrap.css */
+#carousel {
+    margin-top: 20px;
+}
+.item .thumb {
+  width: 25%;
+  cursor: pointer;
+  float: left;
+}
+.item .thumb img, .item img {
+  width: 100%;  
 }
 
-#carousel-example-generic {
-    margin: 20px auto;
+.carousel-indicators {
+    display: none;
+  }
+
+
+#carousel .carousel-control {
+    display: none;
+  }
+
+
+
+#uploadOverlay {
+  position: absolute;
+  z-index: 1000;
+  height: 500px;
+  width: 90%;
+  top: 30px;
+  left: 50px;
+  background: red;
 }
 
-#carousel-custom {
-    margin: 20px auto;
+.form-control {
+  border-radius: 0px;
 }
-#carousel-custom .carousel-indicators {
-    margin: 10px 0 0;
-    overflow: auto;
-    position: static;
-    text-align: left;
-    white-space: nowrap;
-    width: 100%;
+
+.fadein,
+.fadeout {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
 }
-#carousel-custom .carousel-indicators li {
-    background-color: transparent;
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    display: inline-block;
-    height: auto;
-    margin: 0 !important;
-    width: auto;
+
+.fadein.ng-hide-remove,
+.fadeout.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+  display: block !important;
 }
-#carousel-custom .carousel-indicators li img {
-    display: block;
-    opacity: 0.5;
-}
-#carousel-custom .carousel-indicators li.active img {
-    opacity: 1;
-}
-#carousel-custom .carousel-indicators li:hover img {
-    opacity: 0.75;
-}
-#carousel-custom .carousel-outer {
-    position: relative;
+
+.fadeout.ng-hide-add,
+.fadein.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+  display: block !important;
 }
