@@ -24,7 +24,9 @@ module.exports = {
         'https://www.google.com/recaptcha/api.js',
         'public/lib/video.js/dist/video-js/video.js',
         'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js',
-        'public/lib/chosen/angular-chosen.js'
+        'public/lib/chosen/angular-chosen.js',
+        'public/lib/ng-file-upload/ng-file-upload-shim.min.js',
+        'public/lib/ng-file-upload/ng-file-upload.min.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

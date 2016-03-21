@@ -22,6 +22,13 @@ angular.module('talents').config(['$stateProvider',
           roles: ['user', 'admin']
         }
       })
+      .state('talents.upload', {
+        url: '/upload',
+        templateUrl: 'modules/talents/client/views/upload-talent.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
       .state('talents.view', {
         url: '/:talentId',
         templateUrl: 'modules/talents/client/views/view-talent.client.view.html'

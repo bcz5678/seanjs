@@ -1,0 +1,93 @@
+<section ng-controller="uploadController">
+  
+	<div class="row">
+	 	<div class="col-md-8 col-md-offset-2">
+			<form name="myForm">
+		        <div>Crop Image and Upload</div>
+
+
+		       <div 	class="btn btn-primary" 
+		       			ngf-select 
+		       			ng-model="file" 
+		       			name="file" 
+		       			ngf-pattern="'image/*'"
+    					ngf-accept="'image/*'" 
+    					ngf-max-size="20MB" 
+    					ngf-min-height="100" 
+    					ngf-resize="{width: 100, height: 100}">
+    				Select
+    			</div>
+    			<div>
+	    			Single File:
+				    <ul>
+				        <li mg-model="file" style="font:smaller" name="file">{{file.name}} {{file.$error}} {{file.$errorParam}}</li>
+				    </ul>
+
+					<button class="btn btn-primary" ng-click="upload(file)">Submit Single File</button> 		     
+				</div>
+				<div>
+				<div 	ngf-drop 
+						ngf-select 
+						ng-model="files" 
+						class="drop-box" 
+        				ngf-drag-over-class="'dragover'" 
+        				ngf-multiple="true" 
+        				ngf-accept="image/*,application/pdf,video/*" 
+        				ngf-pattern="'image/*,application/pdf,video/*'"
+        				ngf-model-invalid="invalidFiles">
+        			Drop pdfs or images here or click to upload
+        		</div>
+
+        		<div ng-show="invalidFiles" class="row">
+	        		<div class="col-md-6 alert alert-danger" role="alert">
+		        		<strong>Oops!</strong> You can't upload that file type!
+		        		<a class="pull-right" ng-click="invalidFiles = !invalidFiles"><i class="fa fa-times fa-2x"></i></a>
+	        		</div>
+	        	</div>
+    Files:
+    <ul class="list-inline">
+    	<div class="row">
+        	<li ng-repeat="f in files" style="font:smaller"> 
+        		<div class="col-md-6 panel">
+	        		<img ngf-thumbnail="f" class="col-md-3 thumbnail" ngf-size="{width: 200, height: 200, quality: 1.0}" style="max-height: 150px;"/>
+	        		<div class="col-md-9">
+	        			<div class="row">
+							<label >{{f.name}} {{f.$error}} {{f.$errorParam}}</label>
+						</div>
+						<div class="row">
+				        	<div  class="col-md-9">
+				        		<div class="progress">
+								  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="{{f.progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{f.progress}}%; min-width: 2em;">
+								    <span  ng-bind="f.progress + '%'"></span>
+								  </div>
+								 </div>
+							</div>						
+							<div class="col-md-3" ng-show="f.progress = 100">
+								 <i class="fa fa-check-square-o fa-success fa-3x fadeIn"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</div>
+    </ul>
+    
+    Errors:
+    <pre>{{ errorMsg }}</pre>
+
+    Response:
+    <pre>{{ response }}</pre>
+
+    Upload Log:
+    <pre>{{ log }}</pre>
+
+	</div>
+</div>
+
+		            
+		        
+		    </form>
+		</div>
+	</div>
+
+</section>

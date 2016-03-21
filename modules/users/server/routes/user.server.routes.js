@@ -13,6 +13,11 @@ module.exports = function(app) {
   app.route('/api/user/password').post(user.requiresLogin, user.changePassword);
   app.route('/api/user/picture').post(user.requiresLogin, user.changeProfilePicture);
 
+   //route for
+  app.route('/api/user/profile/uploads').post(user.uploadMedia, function (req, res, next) {
+      
+      } );
+
   // Finish by binding the user middleware
   app.param('userId', user.userByID);
 };

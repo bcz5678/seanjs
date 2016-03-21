@@ -15,6 +15,8 @@ angular.module('talents').controller('talentsController', ['$scope', '$http', 't
 
 		$scope.editHeadline = false;
 		$scope.editVitals = false;
+		$scope.editPhysical = false;
+
 
 		$scope.ageRange = _.range(18, 99);
 		$scope.weightRange = _.range(80, 350);

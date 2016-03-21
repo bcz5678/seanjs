@@ -131,7 +131,7 @@ exports.talentByID = function(req, res, next, id) {
       });
     } else {
       req.talent = talent;
-      next();
+      next()
     }
   }).catch(function(err) {
     return next(err);

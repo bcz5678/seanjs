@@ -23,8 +23,8 @@ module.exports = function(sequelize, DataTypes) {
     gender: DataTypes.INTEGER,
     characterTags : DataTypes.STRING,
     physicalType : DataTypes.STRING,
-    topimage : DataTypes.STRING,
-    profileVideoName : DataTypes.STRING,
+    topImage : DataTypes.STRING,
+    mediaArray : DataTypes.TEXT
   }, {
     associate: function(models) {
       Talent.belongsTo(models.user);

@@ -23,6 +23,7 @@ module.exports = function(app) {
     .put(talent.update)
     .delete(talent.delete);
 
+
   // Finish by binding the talent middleware
   app.param('talentId', talent.talentByID);
 

@@ -192,3 +192,14 @@ exports.getProfile = function(req, res) {
 exports.me = function(req, res) {
   res.json(req.user || null);
 };
+
+exports.uploadMedia = function(req, res) {
+      if (!req.file) {
+        return res.status(400).send({
+          message: 'Error occurred while uploading profile picture'
+        });
+      } else {
+        res.status(204).send(); 
+      }
+
+};
