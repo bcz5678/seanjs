@@ -1,4 +1,39 @@
 <section ng-controller="AccountsController">
+
+{{ activeNav }}
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div id="signup-header"
+      <ul id="signup-progress" class="list-inline">  
+          <li id="1" ng-class="activeNav === 1 ? 'active' : ''">
+              Step 1.
+          </li>
+          <li id="2" ng-class="activeNav === 2 ? 'active' : ''">
+              Step 2.
+          </li>
+          <li id="3" ng-class="activeNav === 3 ? 'active' : ''">
+              Step 3.
+          </li>
+          <li id="4" ng-class="activeNav === 4 ? 'active' : ''">
+              Step 4.
+          </li>
+          <li id="5" ng-class="activeNav === 5 ? 'active' : ''">
+              Step 5.
+          </li>
+      </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
   <div class="page-header">
     <h1>New Account</h1>
   </div>

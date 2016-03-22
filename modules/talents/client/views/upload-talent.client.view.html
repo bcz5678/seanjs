@@ -4,6 +4,7 @@
 	 	<div class="col-md-8 col-md-offset-2">
 			<form name="myForm">
 		        <div>Crop Image and Upload</div>
+		        {{ invalidFiles}}
 
 
 		       <div 	class="btn btn-primary" 
@@ -38,7 +39,7 @@
         			Drop pdfs or images here or click to upload
         		</div>
 
-        		<div ng-show="invalidFiles" class="row">
+        		<div ng-show="invalidFiles.length > 0" class="row">
 	        		<div class="col-md-6 alert alert-danger" role="alert">
 		        		<strong>Oops!</strong> You can't upload that file type!
 		        		<a class="pull-right" ng-click="invalidFiles = !invalidFiles"><i class="fa fa-times fa-2x"></i></a>

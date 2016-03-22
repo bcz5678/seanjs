@@ -5,6 +5,8 @@ angular.module('accounts').controller('AccountsController', ['$scope', '$statePa
   function($scope, $stateParams, $location, Authentication, Accounts) {
     $scope.authentication = Authentication;
 
+    $scope.activeNav = 1;
+
     // Create new Account
     $scope.create = function(isValid) {
       $scope.error = null;

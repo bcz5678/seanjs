@@ -5,9 +5,16 @@ angular.module('talents').run(['Menus',
   function(Menus) {
     // Add the talents dropdown item
     Menus.addMenuItem('topbar', {
-      title: 'Profile',
+      title: 'Talent',
       state: 'talents',
       type: 'dropdown',
+      roles: ['*']
+    });
+
+    // Add the dropdown create item
+    Menus.addSubMenuItem('topbar', 'talents', {
+      title: 'See our Talent',
+      state: 'talents.list',
       roles: ['*']
     });
 

@@ -1268,5 +1268,89 @@ a.compose-mail {
 
 .media-thumb-name {
   font-size:  .7em;
+}
+
+.sign-in {
+  background:  url("../img/vintage-lens.jpg");
+
+}
+
+.sign-in-box {
+  background:  #fff;
+  width: 450px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+
+}
+
+.sign-in-head {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:700;
+  color:#333;
+  font-size: 2em;
+}
+
+.img-circle-big {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+}
+
+.forgot-password a{
+  color: #777;
+}
+
+.forgot-password a:hover{
+  color: #ff4c00;
+}
+
+
+.btn.sharp {
+  border-radius:0;
+}
+
+.btn.outline {
+    background: none;
+    padding: 12px 22px;
+}
+
+.btn-primary.outline {
+    border: 2px solid #0099cc;
+    color: #0099cc;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+    background-color: #33a6cc;
+    border-color: #33a6cc;
+    color: #fff;
+
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
+
+.btn-danger.outline {
+    border: 2px solid #c12c2a;
+    color: #c12c2a;
+}
+
+.btn-danger.outline:hover, .btn-danger.outline:focus, .btn-danger.outline:active, .btn-danger.outline.active, .open > .dropdown-toggle.btn-danger {
+    background: #d9534f;
+    border-color: #d9534f;
+    color: #fff;
+}
+.btn-danger.outline:active, .btn-danger.outline.active {
+    border: 2px solid #c12c2a;
+    color: #c12c2a;
+    box-shadow: none;
+}
+
+
+.nav-active {
+  color: red; 
 
 }

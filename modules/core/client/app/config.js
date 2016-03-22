@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function() {
   // Init module configuration options
   var applicationModuleName = 'seanjs';
-  var applicationModuleVendorDependencies = ['ngResource', 'ngAnimate', 'ngMessages', 'ui.router', 'ui.bootstrap', 'ui.utils', 'angularFileUpload', 'ngFileUpload'];
+  var applicationModuleVendorDependencies = ['ngResource', 'ngAnimate', 'ngMessages', 'ui.router', 'ui.bootstrap', 'ui.utils', 'angularFileUpload', 'ngFileUpload', 'ngDraggable'];
 
   // Add a new vertical module
   var registerModule = function(moduleName, dependencies) {

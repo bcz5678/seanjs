@@ -13,10 +13,13 @@ angular.module('talents').controller('uploadController', ['$scope', 'Upload', '$
         }
     });
 
+  $scope.invalidFiles = false;
+
 	$scope.upload = function(files) {
         if (files && files.length) {
 
         	console.log("files length - " + files.length);
+
 
             for (var i = 0; i < files.length; i++) {
               var file = files[i];

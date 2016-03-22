@@ -26,7 +26,8 @@ module.exports = {
         'https://cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js',
         'public/lib/chosen/angular-chosen.js',
         'public/lib/ng-file-upload/ng-file-upload-shim.min.js',
-        'public/lib/ng-file-upload/ng-file-upload.min.js'
+        'public/lib/ng-file-upload/ng-file-upload.min.js',
+        'public/lib/ngDraggable/ngDraggable.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
