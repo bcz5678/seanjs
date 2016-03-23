@@ -9,15 +9,6 @@
       <h1>Account Creation</h1>
     </div>
 
-    <ul class="progress-indicator">
-      <li id="1" ng-class="page == 1 ? 'active' : (page > 1 ? 'completed' : '')" > <span class="bubble"></span>Personal Stuff</li>
-      <li id="2" ng-class="page == 2 ? 'active' : (page > 2 ? 'completed' : '')" > <span class="bubble"></span>Who Are You?</li>
-      <li id="3" ng-class="page == 3 ? 'active' : (page > 3 ? 'completed' : '')" > <span class="bubble"></span>Equipment and Tech</li>
-      <li id="4" ng-class="page == 4 ? 'active' : (page > 4 ? 'completed' : '')" > <span class="bubble"></span>Upload Pics/Video</li>
-      <li id="5" ng-class="page == 5 ? 'active' :  ''" > <span class="bubble"></span>Review and Submit</li>
-    </ul>
-
-
     <div id="progress-list">
       <ul class="progress-list list-inline flex">
         <li class="text-center" ng-class="page == 1 ? 'active' : (page > 1 ? 'completed' : '')">
@@ -66,11 +57,6 @@
         </li>
       </ul>
     </div>
-
-
-
-
-
 
 
     <form name="accountForm" class="form-horizontal" ng-submit="create(accountForm.$valid)" novalidate>
