@@ -1349,8 +1349,37 @@ a.compose-mail {
     box-shadow: none;
 }
 
-
-.nav-active {
-  color: red; 
-
+#signup-progress li p {
+ color: #ccc;
 }
+
+#signup-progress li div {
+  background-color: #ccc;
+  width: 30px;
+  height: 30px;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-top: 4px;
+}
+
+
+#signup-progress li.active div {
+  background-color: green;
+}
+
+#signup-progress li.active p {
+ color: #000; 
+ font-weight: bold;
+}
+
+#signup-progress li.active div:before {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: green; 
+  width: 30px;
+  height: 30px;
+}
+
+

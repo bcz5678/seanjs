@@ -1,0 +1,66 @@
+.custom-icon {
+  font-size:20px;
+  background:#666;
+  background:rgba(0,0,0,0.4);
+  padding:10px;
+  -webkit-border-radius:1100%;
+  -moz-border-radius:100%;
+  -o-border-radius:100%;
+  border-radius:100%;
+  border:2px solid #fff;
+  color:#fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  text-align:center;
+  display:table-cell;
+  vertical-align:middle;
+  width:35px;
+  height:35px;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  -o-transition:.5s;
+  transition:.5s;
+}
+.custom-icon:hover {
+  background:rgba(0,0,0,0.6);
+}
+.fix-editor {
+  display:none;
+}
+.icon-wrapper {
+  display:inline-block;
+}
+
+li.active .custom-icon {
+    background: #337ab7;
+}
+
+li.completed .custom-icon {
+    background: #CCD7E0;
+}
+
+li.active .progress-label {
+  color: #777;
+  font-weight: 600;
+}
+
+.progress-label {
+  color: #ccc;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+.list-inline.flex {
+  display: flex;
+}
+
+.list-inline.flex li {
+  flex: 1;
+  text-align: center;
+}
+
+.progress-list > li > div > i:before{
+    content: 'hello';
+}
+
+
+

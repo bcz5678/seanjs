@@ -1,26 +1,69 @@
 <section ng-controller="AccountsController">
 
-{{ activeNav }}
+
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
-    <div id="signup-header"
-      <ul id="signup-progress" class="list-inline">  
-          <li id="1" ng-class="activeNav === 1 ? 'active' : ''">
-              Step 1.
-          </li>
-          <li id="2" ng-class="activeNav === 2 ? 'active' : ''">
-              Step 2.
-          </li>
-          <li id="3" ng-class="activeNav === 3 ? 'active' : ''">
-              Step 3.
-          </li>
-          <li id="4" ng-class="activeNav === 4 ? 'active' : ''">
-              Step 4.
-          </li>
-          <li id="5" ng-class="activeNav === 5 ? 'active' : ''">
-              Step 5.
-          </li>
+
+    <div class="page-header">
+      <h1>Account Creation</h1>
+    </div>
+
+    <ul class="progress-indicator">
+      <li id="1" ng-class="page == 1 ? 'active' : (page > 1 ? 'completed' : '')" > <span class="bubble"></span>Personal Stuff</li>
+      <li id="2" ng-class="page == 2 ? 'active' : (page > 2 ? 'completed' : '')" > <span class="bubble"></span>Who Are You?</li>
+      <li id="3" ng-class="page == 3 ? 'active' : (page > 3 ? 'completed' : '')" > <span class="bubble"></span>Equipment and Tech</li>
+      <li id="4" ng-class="page == 4 ? 'active' : (page > 4 ? 'completed' : '')" > <span class="bubble"></span>Upload Pics/Video</li>
+      <li id="5" ng-class="page == 5 ? 'active' :  ''" > <span class="bubble"></span>Review and Submit</li>
+    </ul>
+
+
+    <div id="progress-list">
+      <ul class="progress-list list-inline flex">
+        <li class="text-center" ng-class="page == 1 ? 'active' : (page > 1 ? 'completed' : '')">
+          <div class="icon-wrapper">
+            <i class="fa fa-users custom-icon"  >
+              <span class="fix-editor">&nbsp;</span>
+            </i>
+          </div>
+          <div class="progress-label">Personal Stuff</div>
+        </li>
+
+        <li class="text-center" ng-class="page == 2 ? 'active' : (page > 2 ? 'completed' : '')">
+          <div class="icon-wrapper">
+            <i class="fa fa-comment custom-icon" >
+              <span class="fix-editor">&nbsp;</span>
+            </i>
+          </div>
+          <div class="progress-label">Who Are You?</div>
+        </li>
+
+        <li class="text-center" ng-class="page == 3 ? 'active' : (page > 3 ? 'completed' : '')">
+          <div class="icon-wrapper">
+            <i class="fa fa-gears custom-icon"  >
+              <span class="fix-editor">&nbsp;</span>
+            </i>
+          </div>
+          <div class="progress-label">Equipment and Tech</div>
+        </li>
+
+        <li class="text-center" ng-class="page == 4 ? 'active' : (page > 4 ? 'completed' : '')">
+          <div class="icon-wrapper">
+            <i class="fa fa-camera-retro custom-icon"  >
+              <span class="fix-editor">&nbsp;</span>
+            </i>
+          </div>
+          <div class="progress-label">Upload Pics/Video</div>
+        </li>
+
+        <li class="text-center" ng-class="page == 5 ? 'active' :  ''">
+          <div class="icon-wrapper">
+            <i class="fa fa-pencil custom-icon" >
+              <span class="fix-editor">&nbsp;</span>
+            </i>
+          </div>
+          <div class="progress-label">Review and Submit</div>
+        </li>
       </ul>
     </div>
 
@@ -30,77 +73,120 @@
 
 
 
-
-
-
-
-  <div class="page-header">
-    <h1>New Account</h1>
-  </div>
-  <div class="col-md-12">
     <form name="accountForm" class="form-horizontal" ng-submit="create(accountForm.$valid)" novalidate>
-      <fieldset>
+
+      <div ng-show="page == 1" class="">
+
         <div class="form-group" show-errors>
-          <label for="address">Address</label>
-          <input name="address" type="text" ng-model="address" id="address" class="form-control" placeholder="address" required>
+          <input name="address" type="text" ng-model="address" id="address" class="form-control" placeholder="Address" required>
           <div ng-messages="accountForm.address.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Address is required.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="address_2">Address_2</label>
-          <input name="address_2" type="text" ng-model="address_2" id="address_2" class="form-control" placeholder="Address 2" >
+          <input name="address_2" type="text" ng-model="address_2" id="address_2" class="form-control" placeholder="Apt #, Floor, Suite, PO Box">
           <div ng-messages="accountForm.address_2.$error" role="alert">
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label for="city">City</label>
           <input name="city" type="text" ng-model="city" id="city" class="form-control" placeholder="City" required>
           <div ng-messages="accountForm.city.$error" role="alert">
             <p class="help-block error-text" ng-message="required">City is required.</p>
           </div>
         </div>
-         <div class="form-group" show-errors>
-          <label for="zipCode">Zip Code</label>
+        <div class="form-group" show-errors>
           <input name="zipCode" type="text" ng-model="zipCode" id="zipCode" class="form-control" placeholder="Zip Code" required>
           <div ng-messages="accountForm.zipCode.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Zip Code is required.</p>
           </div>
         </div>
-         <div class="form-group" show-errors>
-          <label for="phoneHome">Phone (Home)</label>
+        <div class="form-group" show-errors>
           <input name="phoneHome" type="text" ng-model="phoneHome" id="phoneHome" class="form-control" placeholder="Phone (Home)">
           <div ng-messages="accountForm.phoneHome.$error" role="alert">
             <p class="help-block error-text" ng-message="required"></p>
           </div>
         </div>
-         <div class="form-group" show-errors>
-          <label for="phoneMobile">Phone (Mobile)</label>
+        <div class="form-group" show-errors>
           <input name="phoneMobile" type="text" ng-model="phoneMobile" id="phoneMobile" class="form-control" placeholder="Phone (mobile)">
           <div ng-messages="accountForm.phoneMobile.$error" role="alert">
             <p class="help-block error-text" ng-message="required"></p>
           </div>
         </div>
-         <div class="form-group" show-errors>
-          <label for="phoneOffice">Phone (Office)</label>
+        <div class="form-group" show-errors>
           <input name="phoneOffice" type="text" ng-model="phoneOffice" id="phoneOffice" class="form-control" placeholder="Phone (Office)">
           <div ng-messages="accountForm.phoneOffice.$error" role="alert">
             <p class="help-block error-text" ng-message="required"></p>
           </div>
         </div>
-        <div class="form-group" show-errors></div>
+
+        <div class="lower-nav pull-right">
+          <ul class="list-inline">
+            <li><button class="btn btn-primary sharp outline" ng-click="page = page + 1">NEXT</button></li>
+          </ul>
+        </div>
+      
+      </div>
+
+      <div ng-show="page == 2" class="">
+
+        <h1>Who Are You?</h1>
 
         <div class="form-group">
-          <label for="mainDescription">Main Description</label>
           <textarea name="mainDescription" ng-model="mainDescription" id="mainDescription" class="form-control" cols="30" rows="10" placeholder="Main Description"></textarea>
         </div>
-        <div class="form-group">
-          <input type="submit" class="btn btn-default">
+
+        <div class="lower-nav pull-right">
+          <ul class="list-inline">
+            <li><button class="btn btn-primary sharp outline" ng-click="page = page - 1">BACK</button></li>
+            <li><button class="btn btn-primary sharp outline" ng-click="page = page + 1">NEXT</button></li>
+          </ul>
         </div>
-        <div ng-show="error" class="text-center alert alert-danger">
-          <strong ng-bind="error"></strong>
+
+      </div>
+
+      <div ng-show="page == 3" class="">
+
+        <h1>Equipment and Tech</h1>
+
+        <div class="lower-nav pull-right">
+          <ul class="list-inline">
+            <li><button class="btn btn-primary sharp outline" ng-click="page = page - 1">BACK</button></li>
+            <li><button class="btn btn-primary sharp outline" ng-click="page = page + 1">NEXT</button></li>
+          </ul>
         </div>
-      </fieldset>
+
+      </div>
+
+      <div ng-show="page == 4" class="">
+
+        <h1>Upload Pics/Video</h1>
+
+        <div class="lower-nav pull-right">
+          <ul class="list-inline">
+            <li><button class="btn btn-primary sharp outline" ng-click="page = page - 1">BACK</button></li>
+            <li><button class="btn btn-primary sharp outline" ng-click="page = page + 1">NEXT</button></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div ng-show="page == 5" class="">
+
+        <h1>Review and Submit</h1>
+
+        <div class="lower-nav pull-right">
+          <ul class="list-inline">
+            <li><button class="btn btn-primary sharp outline" ng-click="page = page - 1">BACK</button></li>
+            <li><button class="btn btn-primary sharp outline" ng-click="submit()">SUBMIT</button></li>
+          </ul>
+        </div>
+
+      </div>
+
     </form>
+
+
+
+
   </div>
 </section>
