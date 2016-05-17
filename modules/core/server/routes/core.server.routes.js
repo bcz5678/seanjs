@@ -11,7 +11,11 @@ module.exports = function(app) {
   app.route('/:url(api|modules|lib)/*').get(core.renderNotFound);
 
   // Define application route
+  app.route('/dash').get(core.renderDash);
+
+  // Define application route
   app.route('/*').get(core.renderIndex);
+
 
   //Submit contact form data
   app.route('/api/contact').post(core.contact);

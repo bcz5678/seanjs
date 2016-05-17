@@ -176,9 +176,11 @@ html {
 }
 
 #main-jumbo {
-    background:url("../img/jumbo-main.jpg");
+    background:url("../img/jumbo-main.jpg") center center no-repeat;
+    background-size: cover;
     height: 592px;
 }
+
 
 #jumbo-2 {
   background:url("../img/jumbo-2.jpg");
@@ -1272,8 +1274,9 @@ a.compose-mail {
 
 .sign-in {
   background:  url("../img/vintage-lens.jpg");
-
 }
+
+
 
 .sign-in-box {
   background:  #fff;
@@ -1289,6 +1292,20 @@ a.compose-mail {
   font-weight:700;
   color:#333;
   font-size: 2em;
+}
+
+
+.contact-box {
+  background:  #fff;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+
+}
+
+.jumbotron.contact {
+  background:  url("../img/contact-bg.jpg") center center no-repeat;
+  background-size: cover;
 }
 
 .img-circle-big {
@@ -1380,6 +1397,92 @@ a.compose-mail {
   background-color: green; 
   width: 30px;
   height: 30px;
+}
+
+#talent-filters label{
+  font-family: "Open Sans" sans-serif;
+  font-weight: 300;
+  color: #2f4050;
+}
+
+#talent-filters h4 {
+  font-family: "Open Sans" sans-serif;
+  font-weight: 600;
+  font-size: 1.1em;
+
+}
+
+#talent-filters {
+  border: 1px #eeeeee solid;
+  background-color: #fff;
+}
+
+.check-column {
+  width: 33%;
+  text-align: vertical;
+}
+
+.talent-container {
+  background-color: #f7f7f7;
+  padding-top: 20px;
+  border-top: 1px solid #eee
+}
+
+.filter-group {
+  border-bottom: 1px solid #eee;
+}
+
+.filter-main-head {
+  color: #ff4e00;
+}
+
+.check-item {
+  padding-right: 0px;
+}
+
+.check-label {
+  font-size: .9em;
+  margin-top: -2px;
+}
+
+.fa-star {
+  color: #F5D000;
+}
+
+.star-rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.star-rating .star {
+  padding: 1px;
+  color: #ddd;
+  font-size: 20px;
+  text-shadow: .05em .05em #aaa;
+  list-style-type: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.star-rating .star.filled {
+  color: #fd0;
+}
+.star-rating.readonly .star.filled {
+  color: #666;
+}
+
+.navbar-static-side {
+    z-index: 2001;
+    position: absolute;
+    width: 220px;
+}
+
+.navbar-static-side {
+  background: #2F4050;  
+}
+
+.navbar-static-side li a:hover {
+  background: #273548;
+
 }
 
 

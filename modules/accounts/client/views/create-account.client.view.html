@@ -6,7 +6,8 @@
   <div class="col-md-8 col-md-offset-2">
 
     <div class="page-header">
-      <h1>Account Creation</h1>
+      <h1>Welcome!</h1>
+      <p>Congratulations for joining VidGig Pro! We want to give you answer a few questions!
     </div>
 
     <div id="progress-list">
@@ -58,59 +59,74 @@
       </ul>
     </div>
 
-
+  
     <form name="accountForm" class="form-horizontal" ng-submit="create(accountForm.$valid)" novalidate>
 
       <div ng-show="page == 1" class="">
 
-        <div class="form-group" show-errors>
-          <input name="address" type="text" ng-model="address" id="address" class="form-control" placeholder="Address" required>
-          <div ng-messages="accountForm.address.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Address is required.</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <input name="address_2" type="text" ng-model="address_2" id="address_2" class="form-control" placeholder="Apt #, Floor, Suite, PO Box">
-          <div ng-messages="accountForm.address_2.$error" role="alert">
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <input name="city" type="text" ng-model="city" id="city" class="form-control" placeholder="City" required>
-          <div ng-messages="accountForm.city.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">City is required.</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <input name="zipCode" type="text" ng-model="zipCode" id="zipCode" class="form-control" placeholder="Zip Code" required>
-          <div ng-messages="accountForm.zipCode.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Zip Code is required.</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <input name="phoneHome" type="text" ng-model="phoneHome" id="phoneHome" class="form-control" placeholder="Phone (Home)">
-          <div ng-messages="accountForm.phoneHome.$error" role="alert">
-            <p class="help-block error-text" ng-message="required"></p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <input name="phoneMobile" type="text" ng-model="phoneMobile" id="phoneMobile" class="form-control" placeholder="Phone (mobile)">
-          <div ng-messages="accountForm.phoneMobile.$error" role="alert">
-            <p class="help-block error-text" ng-message="required"></p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <input name="phoneOffice" type="text" ng-model="phoneOffice" id="phoneOffice" class="form-control" placeholder="Phone (Office)">
-          <div ng-messages="accountForm.phoneOffice.$error" role="alert">
-            <p class="help-block error-text" ng-message="required"></p>
-          </div>
-        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
 
-        <div class="lower-nav pull-right">
-          <ul class="list-inline">
-            <li><button class="btn btn-primary sharp outline" ng-click="page = page + 1">NEXT</button></li>
-          </ul>
+            <p>First, we need some basic personal information for our records.</p>
+
+            <div class="col-md-5">
+
+              <div class="form-group" show-errors>
+                <input name="address" type="text" ng-model="address" id="address" class="form-control" placeholder="Address" required>
+                <div ng-messages="accountForm.address.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Address is required.</p>
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <input name="address_2" type="text" ng-model="address_2" id="address_2" class="form-control" placeholder="Apt #, Floor, Suite, PO Box">
+                <div ng-messages="accountForm.address_2.$error" role="alert">
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <input name="city" type="text" ng-model="city" id="city" class="form-control" placeholder="City" required>
+                <div ng-messages="accountForm.city.$error" role="alert"               >
+                  <p class="help-block error-text" ng-message="required">City is required.</p>
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <input name="zipCode" type="text" ng-model="zipCode" id="zipCode" class="form-control" placeholder="Zip Code" required>
+                <div ng-messages="accountForm.zipCode.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Zip Code is required.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-5 col-md-offset-1">
+              <div class="form-group" show-errors>
+                <input name="phoneHome" type="text" ng-model="phoneHome" id="phoneHome" class="form-control" placeholder="Phone (Home)">
+                <div ng-messages="accountForm.phoneHome.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required"></p>
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <input name="phoneMobile" type="text" ng-model="phoneMobile" id="phoneMobile" class="form-control" placeholder="Phone (mobile)">
+                <div ng-messages="accountForm.phoneMobile.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required"></p>
+                </div>
+              </div>
+              <div class="form-group" show-errors>
+                <input name="phoneOffice" type="text" ng-model="phoneOffice" id="phoneOffice" class="form-control" placeholder="Phone (Office)">
+                <div ng-messages="accountForm.phoneOffice.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required"></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      
+        <div class="row">
+          <div class="col-md-10">
+            <div class="lower-nav pull-right">
+              <ul class="list-inline">
+                <li><button class="btn btn-primary sharp outline" ng-click="page = page + 1">NEXT</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div ng-show="page == 2" class="">
@@ -170,9 +186,5 @@
       </div>
 
     </form>
-
-
-
-
   </div>
 </section>

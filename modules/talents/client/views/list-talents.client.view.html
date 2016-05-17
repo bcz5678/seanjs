@@ -1,22 +1,140 @@
-<section ng-controller="talentsController" ng-init="find()">
-  <div class="page-header">
-    <h1>talents</h1>
-  </div>
-  <div class="list-group">
-    <a ng-repeat="talent in talents" ui-sref="talents.view({talentId: talent.id})" class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="talent.created | date:'mediumDate'"></span>
-        by
-        <span ng-bind="talent.user.username"></span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="talent.first_name"></h4>
+<section class="talent-container">
+  <div class="row">
+        <div id="talent-filters" class="col-md-2 col-md-offset-1 animated fadeIn" ng-controller="filterController">
 
-      {{ talent.last_name }}
-      <p class="list-group-item-text" ng-bind="talent.content"></p>
-    </a>
-  </div>
-  <div class="alert alert-warning text-center" ng-if="!talents.length">
-    No talents yet, why don't you <a ui-sref="talents.create">create one</a>?
-  </div>
+            <div class="filter-group">
+              <h4 class="filter-main-head">SORT BY</h4>
+            </div>
+            
+            <div class="filter-group">
+              <h4>Gender</h4>
+            
+              <label ng-repeat="sex in filter.sexes">
+               
+                <input
+                  type="checkbox"
+                  name="selectedSex[]"
+                  value="{{sex.name}}"
+                  ng-model="sex.selected"
+                > {{sex.name}}
+              </label>
+            </div>
+
+            <div class="filter-group">
+              <div class="form-group">
+                  <h4>Age Range</h4>
+                  <div class="input-group">
+                      <select data-placeholder="Select Age Ranges" id="ageRange" ng-model="filter.ages" name="ageRange" chosen class="chosen-select">
+                          <option value="">Select</option>
+                          <option ng-repeat="age in filter.ages" value='{{age.name}}'>{{age.name}}</option>
+                      </select>
+                  </div>
+              </div>
+
+
+              <div class="form-group">
+                  <h4>Physical Type</h4>
+                  <div class="input-group">
+                      <select id="physicalType" ng-model="filter.physicalType" name="physicalType" chosen class="chosen-select">
+                          <option value="">Select</option>
+                          <option ng-repeat="type in filter.physicalTypes" value='{{type}}'>{{type}}</option>
+                      </select>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <h4>Hair Color</h4>
+                  <div class="input-group">
+                      <select id="hairColor" ng-model="filter.hairColor" name="hairColor" chosen class="chosen-select">
+                          <option value="">Select</option>
+                          <option ng-repeat="color in filter.hairColors" value='{{color}}'>{{color}}</option>
+                      </select>
+                  </div>
+              </div>
+            </div>
+             
+            <div class="filter-group">         
+              <h4>Ethnicity</h4>
+              
+              <div class="row">
+                <div class="col-md-6 check-item" ng-repeat="ethnicity in filter.ethnicities" >
+                  <input
+                    type="checkbox"
+                    name="selectedEthnicity[]"
+                    value="{{ethnicity.name}}"
+                    ng-model="ethnicity.selected"
+                  >
+                  <label class="check-label">
+                   {{ethnicity.name}}
+                 </label>   
+                </div>
+              </div>
+            </div>
+            
+            <div class="filter-group"> 
+              <h4> Language</h4>
+              <div class="row">
+                <div class="col-md-6" ng-repeat="language in filter.languages">
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="selectedLanguage[]"
+                      value="{{language.name}}"
+                      ng-model="language.selected"
+                    > {{language.name}}
+                  </label>
+                </div>
+              </div>
+            </div>
+
+             <h4>Tags</h4>
+            <label ng-repeat="modelTag in filter.modelTags">
+             
+              <input
+                type="checkbox"
+                name="selectedmodelTag[]"
+                value="{{modelTag.name}}"
+                ng-model="modelTag.selected"
+              > {{modelTag.name}}
+            </label>
+            <div>
+                <button class="btn btn-primary" ng-click="buildSearch()">Search</button>
+                <button class="btn btn-default" ng-click="resetFilters()">Reset</button>
+            </div>
+
+
+        </div>
+
+
+        <div id="talent-gallery" class="col-md-9 animated fadeInRight" ng-controller="talentGalleryController">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Start talent Cards -->
+                    <div class="col-md-4 talent-card" ng-repeat="talent in talentArray">
+                        <video videojs id="my-video-{{ talent.id }}" class="video-js vjs-default-skin" poster="{{ getImageUrl(talent.id, talent.topimage) }}" src="{{ getVideoUrl(talent.id, talent.profileVideoName) }}" type='video/mp4'>
+                        </video>
+                        <div class="video_list-items row">
+                            <div class="col-md-6"> 
+                                <p>{{ talent.name }}</p>
+                                <p><star-rate rating="talent.rating"></star-rate></p>
+                            </div>
+                            <div class="col-md-6">
+                                
+                                <p>Ethnicity: {{ talent.ethnicity }} </p>
+                                <p>Languages: {{ talent.languages }} </p>
+                            </div>
+                            <div class="col-md-12">
+                                <h5 class="talent-tags-headline"> Personality Tags:</h5>
+                                <span ng-repeat="tag in talent.personality_tags" class="label label-default"> {{tag}}</span>    
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End talent Cards -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Testing the Wizard Buttons -->
+    </div><!-- .row -->
+ 
 </section>

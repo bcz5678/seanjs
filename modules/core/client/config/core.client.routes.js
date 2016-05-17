@@ -17,6 +17,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         url: '/',
         templateUrl: 'modules/core/client/views/home.client.view.html'
       })
+      .state('dash', {
+        url: '/dash',
+        templateUrl: 'modules/core/client/views/dash.client.view.html'
+      })
       .state('how-it-works', {
         url: '/how-it-works',
         templateUrl: 'modules/core/client/views/howItWorks.client.view.html'
@@ -28,7 +32,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       .state('contact-us', {
         url: '/contact-us',
         templateUrl: 'modules/core/client/views/contact.client.view.html'
-      })
+      }) 
       .state('not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/views/404.client.view.html',

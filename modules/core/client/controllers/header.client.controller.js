@@ -6,9 +6,9 @@ angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '
     $scope.$state = $state;
     $scope.authentication = Authentication;
 
-    $http.get("api/messages/unread").success(function(message){
-      $scope.unreadMessages = message;
-    });
+    //$http.get("api/messages/unread").success(function(message){
+    //  $scope.unreadMessages = message;
+    //});
     
 
     // Get the topbar menu

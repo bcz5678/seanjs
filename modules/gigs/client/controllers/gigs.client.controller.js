@@ -133,12 +133,14 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
     return $scope.talentMediaUrl + talentId + '/' + imageId;
   };
 
+
   $scope.talentArray = [{ "id" : 15,
             "name" :"Josephine Baker", 
             "topimage":"15-0001.jpg", 
             "profileVideoName" : "15-profile.mp4",
             "age" : "25",
             "sex" : "Female",
+            "rating" : "5",
             "ethnicity" : "Black",
             "languages" : "English, Russian, Mandarin",
             "personality_tags" : ["Model", "Actor", "Dancer"],
@@ -149,6 +151,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "profileVideoName" : "test.mp4", 
             "age" : "65",
             "sex" : "Male",
+            "rating" : "3.9",
             "ethnicity" : "White",
             "languages" : "English, German",
             "personality_tags" : ["Comedian", "Actor" ],
@@ -159,6 +162,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "profileVideoName" : "test2.mp4",
             "age" : "55",
             "sex" : "Male",
+            "rating" : "4.1",
             "ethnicity" : "White",
             "languages" : "English, Cthulu, Scientology",
             "personality_tags" : ["Actor", "Nutjob"],
@@ -169,6 +173,7 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
             "profileVideoName" : "193-profile.mp4",
             "age" : "45",
             "sex" : "Female",
+            "rating" : "4.5",
             "ethnicity" : "White",
             "languages" : "English, Sex",
             "personality_tags" : ["Actor", "Barista"],
@@ -209,9 +214,9 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
           {name : 'Caucasian', selected : false }, 
           {name : 'Black',  selected : false },
           {name : 'Asian',  selected : false },
-          {name : 'Hispanic',  selected : false },
           {name : 'Native American',  selected : false },
           {name : 'Middle Eastern',  selected : false },
+          {name : 'Hispanic',  selected : false },
           ];
 
 
@@ -276,6 +281,33 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
     }, true
   );
 
+   // ------------Start Age Checkbox Selection -------------
+
+
+  $scope.filter.ages =  [ 
+              {name : "18-24", selected : false },
+              {name : "25-29", selected : false },
+              {name : "30-35", selected : false },
+              {name : "36-40", selected : false },
+              {name : "40-50", selected : false },
+              {name : "50-60", selected : false },
+              {name : "60+", selected : false }
+            ];
+
+  $scope.filter.agesSelection = [];
+
+  //helper function
+  $scope.selectedAges = function() {
+    return filterFilter($scope.filter.ages, {selected: true});
+  };
+
+  //watch selected 
+
+  $scope.$watch('filter.ages|filter:{selected:true}', function(nv){
+      $scope.filter.agesSelection = nv.map(function(age){return age.name});
+    }, true
+  );
+
 
    // ------------Start Ethnicity Checkbox Selection -------------
   $scope.filter.modelTags = [
@@ -303,8 +335,11 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
   );
 
 
+  $scope.currentSearch = {};
+  $scope.currentTalentArray = {};
+
   // ------------Start Search Build  -------------
-  $scope.buildFiltersSearch = function() {
+  $scope.buildSearch = function() {
       $scope.search = {}
       $scope.search.ages = $scope.filter.ages;
       $scope.search.sexes = $scope.filter.sexesSelection;
@@ -312,7 +347,6 @@ angular.module('gigs').controller('GigsController', ['$scope', '$stateParams', '
       $scope.search.languages = $scope.filter.languagesSelection;
 
       console.log($scope.search);
-
      };
   }
 ]);

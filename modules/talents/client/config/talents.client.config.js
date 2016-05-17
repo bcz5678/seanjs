@@ -14,8 +14,7 @@ angular.module('talents').run(['Menus',
     // Add the dropdown create item
     Menus.addSubMenuItem('topbar', 'talents', {
       title: 'See our Talent',
-      state: 'talents.list',
-      roles: ['*']
+      state: 'talents.list'
     });
 
     // Add the dropdown create item

@@ -1,0 +1,152 @@
+<div class="container-fluid nav-container" ng-controller="HeaderController">
+  <div class="navbar-header">
+    <button class="navbar-toggle" type="button" ng-click="toggleCollapsibleMenu()">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+    <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
+      <li class="dropdown" dropdown>
+        <a ui-sref="messages.list" class="dropdown-toggle count-info" href dropdown-toggle>
+          <i class="fa fa-envelope fa-lg"></i>
+          <span class="label label-warning">10</span>  
+        </a>
+        <ul class="dropdown-menu dropdown-messages">
+          <li>
+              <div class="dropdown-messages-box">
+                  <a ui-sref="profile" class="pull-left">
+                      <img alt="image" class="img-circle" src="modules/core/client/img/a7.jpg">
+                  </a>
+
+                  <div class="messages-type">
+                      <small class="pull-right">46h ago</small>
+                      <strong >Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                      <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                  </div>
+              </div>
+          </li>
+          <li class="divider"></li>
+          <li>
+              <div class="dropdown-messages-box">
+                  <a ui-sref="profile" class="pull-left">
+                      <img alt="image" class="img-circle" src="modules/core/client/img/a8.jpg">
+                  </a>
+
+                  <div class="messages-type">
+                      <small class="pull-right text-navy">5h ago</small>
+                      <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                      <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                  </div>
+              </div>
+          </li>
+          <li class="divider"></li>
+          <li>
+              <div class="dropdown-messages-box">
+                  <a ui-sref="profile" class="pull-left">
+                      <img alt="image" class="img-circle" src="modules/core/client/img/a6.jpg">
+                  </a>
+
+                  <div class="messages-type">
+                      <small class="pull-right">23h ago</small>
+                      <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                      <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                  </div>
+              </div>
+          </li>
+          <li class="divider"></li>
+          <li>
+              <div class="text-center link-block">
+                  <a ui-sref="messages.list">
+                      <i class="fa fa-envelope"></i> <strong class="inverse">Read All Messages</strong>
+                  </a>
+              </div>
+          </li>
+      </ul>
+      </li>
+      <li class="dropdown" dropdown>
+        <a href="#" class="dropdown-toggle count-info" href dropdown-toggle>
+          <i class="fa fa-bell fa-lg"></i>
+          <span class="label label-success">6</span>
+        </a>
+        <ul class="dropdown-menu dropdown-alerts">
+          <li>
+            <a ui-sref="inbox">
+              <div class="messages-type">
+                <i class="fa fa-envelope fa"></i> You have 16 messages
+                <span class="pull-right text-muted small">4 minutes ago</span>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+              <a ui-sref="profile">
+                  <div class="messages-type">
+                      <i class="fa fa-twitter fa"></i> 3 New Followers
+                      <span class="pull-right text-muted small">12 minutes ago</span>
+                  </div>
+              </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+              <a ui-sref="grid_options">
+                  <div class="messages-type">
+                      <i class="fa fa-upload fa"></i> Server Rebooted
+                      <span class="pull-right text-muted small">4 minutes ago</span>
+                  </div>
+              </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+              <div class="text-center link-block">
+                  <a ui-sref="dash.notifications">
+                    <i class="fa fa-bell"></i>
+                    <strong class="inverse">See All Alerts</strong>  
+                  </a>
+              </div>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown" dropdown>
+
+        <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
+         
+          <span ng-if="authentication.user.profileImageURL">
+              <img ng-src="/uploads/users/profile/{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image" />
+          </span>
+
+          <span ng-if="!authentication.user.profileImageURL">
+            <img ng-src="/modules/core/client/img/brand/favicon.png" alt="{{authentication.user.displayName}}" class="header-profile-image-default" />
+          </span>
+          <span ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li ui-sref-active="active">
+            <a ui-sref="settings.profile">My Profile </a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="gigs.list">My Gigs</a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="resources.list">My Media</a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="settings.picture">Change Profile Picture</a>
+          </li>
+          <li ui-sref-active="active" ng-show="authentication.user.provider === 'local'">
+            <a ui-sref="settings.password">Change Password</a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="settings.accounts">Manage Social Accounts</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="/api/auth/signout" target="_self">Signout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
