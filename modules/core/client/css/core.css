@@ -103,7 +103,7 @@ html {
 .nav-container {
   width: 1170px;
   height: 75px;
-
+  
 }
 
 /* link */
@@ -1474,6 +1474,8 @@ a.compose-mail {
     z-index: 2001;
     position: absolute;
     width: 220px;
+    height: 100%;
+
 }
 
 .navbar-static-side {
@@ -1485,4 +1487,44 @@ a.compose-mail {
 
 }
 
+.content-dash {
+  margin-top: 0px;
+  padding-left: 220px;
+  background-color: #f3f3f4;
+}
 
+
+
+.nav-container-dash {
+  width: 1170px;
+  height: 60px;
+  border-bottom: 1px solid #e7eaec;
+}
+
+.navbar-right {
+  margin-right: 30px;
+}
+
+.sharp {
+  border-radius: 0px;
+
+}
+
+.dash-footer {
+  height: 25px;
+  border-top: 1px solid #e7eaec;
+  border-bottom: 1px solid #e7eaec;
+  padding: 5px 10px 5px 15px;
+  background-color: #fff;
+}
+
+.navbar-dash {
+  min-height: 50px;
+  margin-bottom: 0px;
+}
+
+.dash-boxed {
+  padding: 10px;
+  border: 1px solid #e7eaec;
+  margin: 10px;
+}

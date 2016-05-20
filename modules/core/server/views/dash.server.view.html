@@ -2,15 +2,15 @@
 {% block content %}
 
 	<div ng-include="'/modules/core/client/views/sidenav.client.view.html'" ></div>
-	  <section class="content">
+	  <section class="content-dash">
 	    <section class="container-fluid"> 
-	    	<header ng-include="'/modules/core/client/views/dashHeader.client.view.html'" class="navbar navbar-seanjs"></header>
+	    	<header ng-include="'/modules/core/client/views/dashHeader.client.view.html'" class="navbar navbar-seanjs navbar-dash row"></header>
 		      <div class="row">
 
 		      	<section ui-view></section>
 
 		      </div>
-	    	<footer ng-include="'/modules/core/client/views/footer.client.view.html'"></footer>
+	    	<footer class="row" ng-include="'/modules/core/client/views/dashFooter.client.view.html'"></footer>
 	    </section>
 	  </section>
 	

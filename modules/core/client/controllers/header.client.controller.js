@@ -26,5 +26,9 @@ angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '
       ga('send', 'pageview', $location.path());
     });
 
+    $scope.minimalize = function() {
+  
+    };
+
   }
 ]);

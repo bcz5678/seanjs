@@ -19,7 +19,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       })
       .state('dash', {
         url: '/dash',
-        templateUrl: 'modules/core/client/views/dash.client.view.html'
+        templateUrl: 'modules/core/client/views/dash.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('how-it-works', {
         url: '/how-it-works',

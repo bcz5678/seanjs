@@ -1,4 +1,4 @@
-<div class="container-fluid nav-container" ng-controller="HeaderController">
+<div class="nav-container-dash" ng-controller="HeaderController" ng-show="authentication.user">
   <div class="navbar-header">
     <button class="navbar-toggle" type="button" ng-click="toggleCollapsibleMenu()">
       <span class="sr-only">Toggle navigation</span>
@@ -8,6 +8,12 @@
     </button>
   </div>
   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+
+    <span>
+      <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" ng-click="">
+        <i class="fa fa-bars"></i>
+      </a>
+    </span>
     <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
       <li class="dropdown" dropdown>
         <a ui-sref="messages.list" class="dropdown-toggle count-info" href dropdown-toggle>
