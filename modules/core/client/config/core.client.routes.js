@@ -41,6 +41,18 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
           roles: ['user', 'admin']
         }
       })
+      .state('dash.talents', {
+        abstract: true,
+        url: '',
+        template: '<ui-view/>',
+      })
+      .state('dash.talents.edit', {
+        url: '/talents/edit',
+        templateUrl: 'modules/talents/client/views/edit-talent.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
       .state('dash.resources', {
         abstract: true,
         url: '',
