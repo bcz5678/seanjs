@@ -1484,7 +1484,6 @@ a.compose-mail {
 
 .navbar-static-side li a:hover {
   background: #273548;
-
 }
 
 .content-dash {
@@ -1524,7 +1523,26 @@ a.compose-mail {
 }
 
 .dash-boxed {
-  padding: 10px;
-  border: 1px solid #e7eaec;
-  margin: 10px;
+}
+
+
+.navbar-static-side li.active {
+  background: #273548;
+  border-left: 4px solid #19aa8d;
+}
+
+.navbar-static-side li.active a {
+  background: #273548;
+  color: #fff;
+}
+
+.nav-header {
+  padding: 33px 25px;
+  background: #0e9aef;
+  background: url('../img/header-profile.png');
+}
+
+.nav-header span {
+  color: #DFE4ED;
+  font-size: 13px;
 }

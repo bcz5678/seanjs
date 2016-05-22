@@ -18,8 +18,61 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'modules/core/client/views/home.client.view.html'
       })
       .state('dash', {
+        abstract: true,
         url: '/dash',
+        template: '<ui-view/>',
+      })
+      .state('dash.home', {
+        url: '',
         templateUrl: 'modules/core/client/views/dash.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.gigs', {
+        abstract: true,
+        url: '',
+        template: '<ui-view/>',
+      })
+      .state('dash.gigs.list', {
+        url: '/gigs',
+        templateUrl: 'modules/gigs/client/views/list-gigs.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.resources', {
+        abstract: true,
+        url: '',
+        template: '<ui-view/>',
+      })
+      .state('dash.resources.list', {
+        url: '/resources',
+        templateUrl: 'modules/resources/client/views/list-resources.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.messages', {
+        abstract: true,
+        url: '',
+        template: '<ui-view/>',
+      })
+      .state('dash.messages.list', {
+        url: '/messages',
+        templateUrl: 'modules/messages/client/views/list-messages.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.accounts', {
+        abstract: true,
+        url: '',
+        template: '<ui-view/>',
+      })
+      .state('dash.accounts.list', {
+        url: '/accounts',
+        templateUrl: 'modules/accounts/client/views/list-accounts.client.view.html',
         data: {
           roles: ['user', 'admin']
         }

@@ -47,7 +47,7 @@ angular.module('user').controller('AuthenticationController', ['$scope', '$state
         $scope.authentication.user = response;
 
         // And redirect to the previous or home page
-        $state.go($state.previous.state.name || 'dash', $state.previous.params);
+        $location.path('dash');
       }).error(function(response) {
         $scope.error = response.message;
       });

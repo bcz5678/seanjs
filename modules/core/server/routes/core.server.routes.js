@@ -13,6 +13,9 @@ module.exports = function(app) {
   // Define application route
   app.route('/dash').get(core.renderDash);
 
+   // Define application route
+  app.route('/dash/*').get(core.renderDash);
+
   // Define application route
   app.route('/*').get(core.renderIndex);
 
