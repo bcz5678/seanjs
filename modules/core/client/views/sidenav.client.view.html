@@ -1,37 +1,37 @@
-<nav class="navbar-default navbar-static-side sharp" ng-controller="HeaderController" role="navigation">
+<nav id="sidebar" class="navbar-default navbar-static-side sharp" ng-controller="SidebarController" role="navigation">
     <div class="sidebar-collapse">
         <ul class="nav" id="side-menu">
             <li class="nav-header">
 
                 <div class="profile-element">
-                    <img alt="image" class="img-circle" src="/uploads/users/profile/{{authentication.user.profileImageURL}}"/>
+                    <img alt="image" class="img-circle sidenav" src="/uploads/users/profile/{{authentication.user.profileImageURL}}"/>
                     <div class="clear">
-                        <span class="block m-t-xs">
-                            <strong class="font-bold">{{ authentication.user.displayName }}</strong>
+                        <span>
+                            <h3 class="sidenav-profile-name">{{ authentication.user.displayName }}</h3>
                         </span>
                     </div>   
                 </div>
                 <div class="logo-element">
-                    VGPro
+                VGpro
                 </div>
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="dash.home"><i class="fa fa-th-large"></i>Dashboard Home</a>
+                <a ui-sref="dash.home"><i class="fa fa-th-large"></i><span>Dashboard Home</span></a>
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="dash.gigs.list"><i class="fa fa-diamond"></i>Gigs</a>
+                <a ui-sref="dash.gigs.list"><i class="fa fa-tasks"></i><span>Gigs</span></a>
             </li> 
             <li ui-sref-active="active">
-                <a ui-sref="dash.talents.edit"><i class="fa fa-diamond"></i>Profile</a>
+                <a ui-sref="dash.talents.edit"><i class="fa fa-user"></i><span>Profile</span></a>
             </li>      
             <li ui-sref-active="active">
-                <a ui-sref="dash.resources.list"><i class="fa fa-bar-chart-o"></i>Media</a>
+                <a ui-sref="dash.resources.list"><i class="fa fa-video-camera"></i><span>Media</span></a>
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="dash.messages.list"><i class="fa fa-envelope"></i>Messages</a>
+                <a ui-sref="dash.messages.list"><i class="fa fa-envelope"></i><span>Messages</span></a>
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="dash.accounts.list"><i class="fa fa-flask"></i>Account</a>
+                <a ui-sref="dash.accounts.list"><i class="fa fa-archive"></i><span>Account</span></a>
             </li>
             
         </ul>

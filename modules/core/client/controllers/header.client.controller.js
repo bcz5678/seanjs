@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '$location', '$state', '$http','Authentication', 'Menus',
+angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '$location', '$state', '$http','Authentication', 'Menus', 
   function($rootScope, $scope, $location, $state, $http, Authentication, Menus) {
     // Expose view variables
     $scope.$state = $state;
@@ -16,8 +16,24 @@ angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '
 
     // Toggle the menu items
     $scope.isCollapsed = false;
+
+    $scope.sidebarCollapsed = false;
+
     $scope.toggleCollapsibleMenu = function() {
       $scope.isCollapsed = !$scope.isCollapsed;
+    };
+
+    $scope.minimalize = function() {
+      if($scope.sidebarCollapsed === false) {
+        $("#sidebar").toggleClass("navbar-mini", 400);
+        $("#dash-view").toggleClass("dash-mini", 400);
+        $scope.sidebarCollapsed =true;
+      } else if($scope.sidebarCollapsed === true) {
+        $("#sidebar").toggleClass("navbar-mini", 400);
+        $("#dash-view").toggleClass("dash-mini", 400);
+        $scope.sidebarCollapsed = false;
+      }
+
     };
 
     // Collapsing the menu after navigation
@@ -26,9 +42,7 @@ angular.module('core').controller('HeaderController', ['$rootScope', '$scope', '
       ga('send', 'pageview', $location.path());
     });
 
-    $scope.minimalize = function() {
-  
-    };
+    
 
   }
 ]);

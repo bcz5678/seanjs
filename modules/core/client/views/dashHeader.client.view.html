@@ -10,7 +10,7 @@
   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 
     <span>
-      <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" ng-click="">
+      <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" ng-click="minimalize()">
         <i class="fa fa-bars"></i>
       </a>
     </span>
@@ -152,6 +152,9 @@
             <a href="/api/auth/signout" target="_self">Log Out</a>
           </li>
         </ul>
+      </li>
+      <li>
+        <a href="/api/auth/signout" target="_self"><i class="logout fa fa-sign-out"></i>Log Out</a>
       </li>
     </ul>
   </nav>
