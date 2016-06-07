@@ -41,6 +41,71 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
           roles: ['user', 'admin']
         }
       })
+      .state('dash.gigs.view', {
+        url: '/gigs/:gigId',
+        templateUrl: 'modules/gigs/client/views/view-gig.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.gigs.wizard', {
+        abstract: true,
+        url: '/wizard',
+        templateUrl: 'modules/gigs/client/views/wizard/wizard.client.view.html',
+        controller: 'wizardController',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.gigs.wizard.index', {
+        url: '/wizard-index',
+        templateUrl: 'modules/gigs/client/views/wizard/wizard-index.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.gigs.wizard.step-one', {
+        url: '/step-one',
+        templateUrl: 'modules/gigs/client/views/wizard/step-one.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.gigs.wizard.step-two', {
+        url: '/step-two',
+        templateUrl: 'modules/gigs/client/views/wizard/step-two.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.gigs.wizard.step-three', {
+        url: '/step-three',
+        templateUrl: 'modules/gigs/client/views/wizard/step-three.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.gigs.wizard.step-four', {
+        url: '/step-four',
+        templateUrl: 'modules/gigs/client/views/wizard/step-four.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.gigs.wizard.step-five', {
+        url: '/step-five',
+        templateUrl: 'modules/gigs/client/views/wizard/step-five.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+       .state('dash.gigs.wizard.step-six', {
+        url: '/step-six',
+        templateUrl: 'modules/gigs/client/views/wizard/step-six.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
       .state('dash.talents', {
         abstract: true,
         url: '',
@@ -88,6 +153,34 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         data: {
           roles: ['user', 'admin']
         }
+      })
+      .state('dash.settings', {
+        abstract: true,
+        url: '/settings',
+        templateUrl: 'modules/users/client/views/settings/settings.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.settings.info', {
+        url: '/info',
+        templateUrl: 'modules/users/client/views/settings/edit-info.client.view.html'
+      })
+      .state('dash.settings.profile', {
+        url: '/profile',
+        templateUrl: 'modules/users/client/views/settings/edit-profile.client.view.html'
+      })
+      .state('dash.settings.password', {
+        url: '/password',
+        templateUrl: 'modules/users/client/views/settings/change-password.client.view.html'
+      })
+      .state('dash.settings.accounts', {
+        url: '/accounts',
+        templateUrl: 'modules/users/client/views/settings/manage-social-accounts.client.view.html'
+      })
+      .state('dash.settings.picture', {
+        url: '/picture',
+        templateUrl: 'modules/users/client/views/settings/change-profile-picture.client.view.html'
       })
       .state('how-it-works', {
         url: '/how-it-works',

@@ -1,21 +1,44 @@
 
-
- <div class="col-md-12 dash-boxed">
- Main dash section
+ <div class="col-md-12 dash-full-panel">
+ 	<h1 class="dash-head-title">Welcome {{authentication.user.displayName}}</h1>
  	<a ui-sref="dash.gigs">See More Gigs</a>
  </div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 dash-boxed">
+		 	<div class="dash-boxed-title">
+		 		Section #1 Header
+		 	</div>
+		 	<div class="dash-boxed-main">
+		 		<p>
+		 			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+		 		</p>
+		 		<a ui-sref="dash.media">Arrange Media</a>
+		 	</div>
+		 </div>
 
- <div class="col-md-4 dash-boxed">
- 	Section #1
- 	<a ui-sref="dash.media">Arrange Media</a>
- </div>
+		<div class="col-md-4 dash-boxed">
+		 	<div class="dash-boxed-title">
+		 		Section #2 Header
+		 	</div>
+		 	<div class="dash-boxed-main">
+		 		<p>
+		 			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+		 		</p>
+		 		<a ui-sref="dash.notifications">See More</a>
+		 	</div>
+		 </div>
 
-<div class="col-md-4 dash-boxed">
- 	Section #2
- 	<a ui-sref="dash.notifications">See More</a>
- </div>
-
- <div class="col-md-4 dash-boxed">
- 	Section #3
- 	<a ui-sref="dash.gig.create">Start a new Job!</a>
- </div>
+		 <div class="col-md-4 dash-boxed">
+		 	<div class="dash-boxed-title">
+		 		Section #3 Header
+		 	</div>
+		 	<div class="dash-boxed-main">
+		 		<p>
+		 			Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+		 		</p>
+		 		<a ui-sref="dash.gig.create">Start a new Job!</a>
+		 	</div>
+		</div>
+	</div>
+</div>

@@ -44,8 +44,14 @@ exports.update = function(req, res) {
   var account = req.account;
 
   account.updateAttributes({
-    title: req.body.title,
-    content: req.body.content
+    address: req.body.address,
+    address_2: req.body.address_2,
+    city: req.body.city,
+    state: req.body.state,
+    zipCode: req.body.zipCode,
+    phoneOffice: req.body.phoneOffice,
+    phoneHome: req.body.phoneHome,
+    phoneMobile: req.body.phoneMobile
   }).then(function(account) {
     res.json(account);
   }).catch(function(err) {

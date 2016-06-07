@@ -1,25 +1,59 @@
  <section ng-controller="GigsController" ng-init="findOne()">
-  <div class="col-sm-8 col-s">
-    <h1>{{ gig.user.firstName }} {{ gig.user.lastName }}</h1>
-    <ul>
-      <li>{{ gig.user.email }}</li>
-      <li>{{ gig.name }}</li>
-      <li>{{ gig.description }}</li>
-      <li>{{ gig.feelingTags }} </li>
-      <li>{{ gig.preferredTalent }}</li>
-      <li>{{ gig.gigType }}</li>
-      <li>{{ gig.acceptedActors }}</li>
-      <li>{{ gig.acceptedScript }}</li>
-      <li>{{ gig.acceptedEditor }}</li>
-      <li>{{ gig.status }}</li>
-    </ul>
+  <div class="col-sm-7 col-sm-offset-1">
+    <div class="row dash-boxed">
+      <div class="dash-boxed-title">
+        <h1 class="gig-header">Gig Details</h1>
+      </div>
+      <div class="dash-boxed-main">
+        <div class="gig-box">
+          <h1 class="gig-name">{{ gig.name }}</h1>
+          <span class="gig-creator">Created by:  gig.createdBy </span> 
+          <span class="gig-creation-divider">|</span>
+          <span class="gig-id">Order# {{ gig.id }}</span>
+          <span class="gig-creation-divider">|</span>
+          <span class="gig-created">{{ gig.createdAt | date : 'MMMM d, yyyy'  }}</span>
+        </div>
+        <div  class="gig-box">
+          <h4 class="gig-section-title">Type</h4>
+          {{ gig.gigType }}
+
+          <h4 class="gig-section-title">Description</h4>
+          {{ gig.description }}
+
+          <h4 class="gig-section-title">Status</h4>
+          {{ gig.status}}
+
+          <h4 class="gig-section-title">Actors</h4>
+          {{ gig.acceptedActors }}
+
+          <h4 class="gig-section-title">Scriptwriter</h4>
+          {{ gig.acceptedScript }}
+
+          <h4 class="gig-section-title">Editor</h4>
+          {{ gig.acceptedEditor }}
+
+          <h4 class="gig-section-title">Style</h4>
+          {{ gig.feelingTags }} 
+        </div>
+      </div>
+    </div>
+    <div class="row dash-boxed">
+      <div class="dash-boxed-title">
+        Insert Media Here
+      </div>
+    </div>
   </div>
-  <div class="">
-      Insert MEdia Here
+  <div class="col-sm-4 dash-boxed">
+    <div class="dash-boxed-title">
+      Messages
+    </div>
+    <div class="dash-boxed-title">
+      Add messages form
+    </div>
   </div>
-  <div class="">
-      Insert Insert Messages Here
-  </div>
+
+
+   
   
   <div class="pull-right" ng-show="authentication.user.id == gig.user.id || (authentication.user.roles.indexOf('admin') && authentication.user.roles.indexOf('admin') != -1) ">
     <a class="btn btn-primary" ui-sref="gigs.edit({gigId: gig.id})">

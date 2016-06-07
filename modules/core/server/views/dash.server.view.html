@@ -5,7 +5,7 @@
 	  <section id="dash-view" class="content-dash">
 	    <section class="container-fluid"> 
 	    	<header ng-include="'/modules/core/client/views/dashHeader.client.view.html'" class="navbar navbar-seanjs navbar-dash row"></header>
-		      <div class="row">
+		      <div class="row" ng-controller="DashController">
 
 		      	<section ui-view></section>
 

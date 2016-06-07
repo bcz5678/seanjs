@@ -1165,10 +1165,11 @@ a.compose-mail {
 #addMedia {
   position: absolute;
   top: 0px;
-  left: 0px;
-  width: 75px;
-  height: 75px;
+  left: -20px;
+  width: 60px;
+  height: 60px;
   z-index: 1000;
+  opacity: .8;
 }
 
 .displayName {
@@ -1201,6 +1202,8 @@ a.compose-mail {
   width: 25%;
   cursor: pointer;
   float: left;
+  max-height: 100px;
+  min-height: 100px;
 }
 .item .thumb img, .item img {
   width: 100%;  
@@ -1219,11 +1222,11 @@ a.compose-mail {
 
 #uploadOverlay {
   position: absolute;
-  z-index: 1000;
+  z-index: 2000;
   height: 500px;
   width: 90%;
   top: 30px;
-  left: 50px;
+  left: 15px;
   background: red;
 }
 
@@ -1479,7 +1482,6 @@ a.compose-mail {
     -webkit-transition: all 0.3s ease-in 0s;
     -o-transition: all 0.3s ease-in 0s;
     transition: all 0.3s ease-in 0s;
-
 }
 
 .navbar-static-side {
@@ -1533,9 +1535,6 @@ a.compose-mail {
 .navbar-dash {
   min-height: 50px;
   margin-bottom: 0px;
-}
-
-.dash-boxed {
 }
 
 
@@ -1687,8 +1686,82 @@ img.img-circle.sidenav {
   margin: 5px 5px;
 }
 
+.carousel-lg-slides {
+  background-color: #fff;
+  border: 1px solid #e7eaec;
+}
+
+
+
 .carousel-lg-slides img{
     max-height: 400px;
+    min-height: 400px;
+    height: 400px;
     margin: auto;
-    min-width: none;
+    width: auto;
 }
+
+
+.dash-boxed {
+  background: #fff;
+  border: 1px solid #e7eaec;
+  margin-top: 20px;
+}
+
+.dash-full-panel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 225px;
+  padding: 20px 20px 20px 20px;
+  background: #fff;
+  border: 1px solid #e7eaec;
+}
+
+.dash-boxed-title {
+  border-top: 3px solid #e7eaec;
+  border-bottom: 1px solid #e7eaec;
+}
+
+.gig-header {
+  font-size: 2em;
+  font-weight: 500;
+  padding: 10px 10px 10px 10px;
+}
+
+.gig-name {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+h4.gig-section-title {
+  font-weight: 400;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.gig-box {
+  padding: 10px 15px 10px 15px;
+}
+
+.gig-creation-divider {
+  padding: 0px 10px;
+}
+
+a.gig-link{
+  color: #000;
+}
+
+.nav-pills {
+  background-color: #C8CACC;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.nav-pills li a{
+  color: #000;
+}
+.nav-pills li a:hover {
+ background-color: #A8AEB3;
+ color: #fff;
+}
+

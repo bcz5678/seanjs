@@ -1,14 +1,10 @@
 'use strict';
 
 
-angular.module('talents').controller('talentsController', ['$scope', '$http', 'talents', 'Authentication', 
-	function($scope, $http, talents, Authentication) {
+angular.module('talents').controller('talentsController', ['$scope', '$http', 'Talents', 'Authentication', 
+	function($scope, $http, Talents, Authentication) {
 
 		$scope.authentication = Authentication;
-
-		$http.get("api/talent/" + $scope.authentication.user.id).success(function(profile){
-	      $scope.talentProfile = profile;
-	    });
 
 		$scope.togglePhotoUpload = false;
 		$scope.toggleMediaUpload = false;
@@ -56,24 +52,5 @@ angular.module('talents').controller('talentsController', ['$scope', '$http', 't
 						          'Comedic', 
 						          'Dramatic'
 						          ];
-
-
-		$scope.thumbClick = function(e) {
-			var clickedIndex = $(e.currentTarget).attr("data-slide-to");
-
-			var activeSlide = angular.element('#carousel .active');
-
-
-			activeSlide.removeClass('active');
-
-
-			var carousel = angular.element('#carousel-slide-' + clickedIndex);
-
-			carousel.addClass('active');
-
-			console.log(carousel);
-
-		}
-
 
 }]);

@@ -8,7 +8,7 @@ angular.module('talents').config(['$stateProvider',
     $stateProvider
       .state('talents', {
         abstract: true,
-        url: '/talents',
+        url: '/talent',
         template: '<ui-view/>'
       })
       .state('talents.list', {
