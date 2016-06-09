@@ -44,8 +44,21 @@ exports.update = function(req, res) {
   var talent = req.talent;
 
   talent.updateAttributes({
-    title: req.body.title,
-    content: req.body.content
+    headline_1: req.body.headline_1,
+    headline_2: req.body.headline_2,
+    mainDescription: req.body.mainDescription,
+    gender: req.body.gender,
+    age: req.body.age,
+    height: req.body.height,
+    weight: req.body.weight,
+    hairColor: req.body.hairColor,
+    hairType: req.body.hairType,
+    languages: req.body.languages,
+    ethnicity: req.body.ethnicity,
+    accents: req.body.accents,
+    characterTags: req.body.characterTags,
+    physicalType: req.body.physicalType,
+
   }).then(function(talent) {
     res.json(talent);
   }).catch(function(err) {

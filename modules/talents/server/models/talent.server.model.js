@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     languages: DataTypes.STRING,
     accents: DataTypes.STRING,
     ethnicity: DataTypes.STRING,
-    gender: DataTypes.INTEGER,
+    gender: DataTypes.STRING,
     characterTags : DataTypes.STRING,
     physicalType : DataTypes.STRING,
     topImage : DataTypes.STRING,
