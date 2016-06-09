@@ -19,7 +19,9 @@ module.exports = function(sequelize, DataTypes) {
     phoneMobile: DataTypes.STRING,
     phoneOffice: DataTypes.STRING,
     fax: DataTypes.STRING,
-    mainDescription: DataTypes.TEXT,
+    setup: DataTypes.TEXT,
+    toDo: DataTypes.TEXT,
+    config: DataTypes.TEXT,
     userType: DataTypes.INTEGER
   }, {
     associate: function(models) {

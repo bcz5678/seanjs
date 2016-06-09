@@ -1,4 +1,4 @@
-<section ng-controller="talentsController">
+<section ng-controller="talentEditController">
 
  
   <div class="col-xs-10 col-xs-offset-1">
@@ -10,7 +10,7 @@
           </div>
 
           <!-- Main Pic -->
-          <div class="col-xs-12 col-sm-7">
+          <div class="col-xs-12 col-sm-7" >
               
             <div class="row">
                <!-- Media Carousel -->
@@ -52,17 +52,19 @@
           <!-- Profile Main -->
           <div class="col-xs-12 col-sm-5">
 
+         
+
           <!-- Display Name -->
             <h1 class="displayName">{{ talentProfile.user.displayName}}</h1>
+             
 
           <!-- Headline and Description Boxes -->
             <div class="profileEditHeader">
-              <a href="" ng-click="editHeadline = !editHeadline"><i class="fa fa-pencil-square-o"></i></a>
               Edit Descriptions
             </div>
             <div>
-              <div ng-if="talentProfile.headline_1" class="headline_1">
-                <h3 ng-if="!$parent.editHeadline">
+              <div class="headline_1">
+                < ng-if="!$parent.editHeadline">
                     {{ talentProfile.headline_1 }} 
                 </h3> 
               </div>

@@ -25,3 +25,16 @@ angular.module('talents').factory('TalentProfiles', ['$resource',
     });
   }
 ]);
+
+//talents service used for communicating with the talents REST endpoints
+angular.module('talents').factory('TalentMedia', ['$resource',
+  function($resource) {
+    return $resource('api/resources/:resourceId', {
+      resourceId: '@id'
+    }, {
+      update: {
+        method: 'PUT'
+      }
+    });
+  }
+]);

@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
     characterTags : DataTypes.STRING,
     physicalType : DataTypes.STRING,
     topImage : DataTypes.STRING,
-    mediaArray : DataTypes.TEXT
+    mediaConfig : DataTypes.TEXT
   }, {
     associate: function(models) {
       Talent.belongsTo(models.user);
