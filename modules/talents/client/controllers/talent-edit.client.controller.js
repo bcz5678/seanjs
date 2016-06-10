@@ -60,9 +60,9 @@ angular.module('talents').controller('talentEditController', ['$scope', '$http',
 		var talentProfile = $scope.talentProfile;
 
 		talentProfile.$update(function(response) {
-		$scope.$broadcast('show-errors-reset', 'talentForm');
+			$scope.$broadcast('show-errors-reset', 'talentForm');
 
-		$scope.success = true;
+			$scope.success = true;
 		}, function(response) {
 		$scope.error = response.data.message;
 		});

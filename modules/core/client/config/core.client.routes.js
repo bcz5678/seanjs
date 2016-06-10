@@ -118,6 +118,20 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
           roles: ['user', 'admin']
         }
       })
+      .state('dash.talents.media', {
+        url: '/talents/media',
+        templateUrl: 'modules/talents/client/views/position-talent.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('dash.talents.upload', {
+        url: '/talents/upload',
+        templateUrl: 'modules/talents/client/views/upload-talent.client.view.html',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
       .state('dash.resources', {
         abstract: true,
         url: '',

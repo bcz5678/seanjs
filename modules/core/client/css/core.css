@@ -1176,12 +1176,12 @@ a.compose-mail {
   font-family: 'Raleway', sans-serif;
   font-weight:700;
   color:#ff4e00;
-  margin-left:15px;
-  margin-top:5px;
+  margin-left:0px;
+  margin-top:20px;
   margin-bottom:5px;
 }
 
-.profileEditHeader {
+.profileHeader {
   font-family: 'Raleway', sans-serif;
   font-weight:700;
   color: #bbb;
@@ -1191,7 +1191,19 @@ a.compose-mail {
   border-bottom: 1px #ddd solid;
 }
 
- 
+.profileEditHeader {
+  font-family: 'Raleway', sans-serif;
+  font-weight:700;
+  color: #bbb;
+  margin-left:0px;
+  margin-top:20px;
+  margin-bottom:5px;
+  border-bottom: 1px #ddd solid;
+}
+
+#profileContainer {
+  margin-bottom:50px;
+}
 
 
 /* CSS used here will be applied after bootstrap.css */
@@ -1507,16 +1519,13 @@ a.compose-mail {
   padding-left: 70px;
 }
 
-
-
 .nav-container-dash {
-  width: 1170px;
   height: 60px;
   border-bottom: 1px solid #e7eaec;
 }
 
 .navbar-right {
-  margin-right: 30px;
+  margin-right: 15px;
 }
 
 .sharp {
@@ -1765,3 +1774,6 @@ a.gig-link{
  color: #fff;
 }
 
+.upload-thumb img{
+  height: 50px;
+}

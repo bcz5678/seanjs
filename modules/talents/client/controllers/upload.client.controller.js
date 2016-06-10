@@ -1,7 +1,7 @@
 'use strict';
 
 
-angular.module('talents').controller('uploadController', ['$scope', 'Upload', '$timeout', function($scope, Upload, $timeout) {
+angular.module('talents').controller('UploadController', ['$scope', 'Upload', '$timeout', function($scope, Upload, $timeout) {
   $scope.log ="No Files Uploaded Yet";
   $scope.$watch('files', function () {
         $scope.upload($scope.files);

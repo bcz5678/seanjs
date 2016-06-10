@@ -1,6 +1,6 @@
 <section ng-controller="TalentProfileController" ng-init="getProfile(talentId)">
 
-  <div class="col-xs-10 col-xs-offset-1">
+  <div class="col-xs-11 col-xs-offset-1" id="profileContainer">
     <div class="row">
 
       <!-- Main Pic -->
@@ -17,14 +17,14 @@
             <!-- start Carousel Main images -->
               <carousel id="carousel" class="carousel-lg-slides">
 
-                <slide ng-repeat="image in talentProfile.mediaArray.images" id="carousel-slide-{{ $index }}"><img class="img-responsive" ng-src="/uploads/users/media/{{ talentProfile.id }}/{{image.filename}}"></slide>   
+                <slide ng-repeat="image in talentMediaArray.images" id="carousel-slide-{{ $index }}"><img class="img-responsive" ng-src="/uploads/users/media/{{ talentProfile.id }}/{{image.filename}}"></slide>   
               </carousel>
 
             <!-- start Carousel THumb images broken in to 4 thumb sets-->
               <carousel id="thumbcarousel">
-                <slide ng-repeat="(k1, v1) in talentProfile.mediaArray.thumbs">
+                <slide ng-repeat="(k1, v1) in talentMediaArray.thumbs">
                   <div class="item">
-                    <img  ng-repeat="(k2, thumb) in talentProfile.mediaArray.thumbs[k1]" data-target="#carousel" data-slide-to="{{thumb.position - 1 }}" src="/uploads/users/media/{{ talentProfile.id }}/{{thumb.filename}}" class="thumb" ng-click="thumbClick($event)">
+                    <img  ng-repeat="(k2, thumb) in talentMediaArray.thumbs[k1]" data-target="#carousel" data-slide-to="{{thumb.position - 1 }}" src="/uploads/users/media/{{ talentProfile.id }}/{{thumb.filename}}" class="thumb" ng-click="thumbClick($event)">
                   </div>
                 </slide>
               </carousel>
@@ -42,24 +42,20 @@
 
       <!-- Headline and Description Boxes -->
         <div class="row">
+          
           <div class="col-md-12" >
               <h3 name="headline_1" ng-bind="talentProfile.headline_1" id="headline_1"></h3>
               <div name="mainDescription" ng-bind="talentProfile.mainDescription" id="mainDescription"></div>
           </div>
         </div>
         <div class="row" >
-          <div class="profileEditHeader">
+          <div class="profileHeader">
               Vital Info
           </div>
           <div class="col-md-6">  
             <div class="gender">
               <label for="gender">Gender: </label>
-              <span ng-if="talentProfile.gender === 0">
-                M
-              </span> 
-               <span ng-if="talentProfile.gender === 1">
-                M
-              </span>
+              <span ng-bind="talentProfile.gender "></span> 
             </div>
             <div ng-if="talentProfile.age" class="age">
               <label for="age">Age: </label>
@@ -80,7 +76,7 @@
 
     <div class="row">
       <!-- Headline and Description Boxes -->
-    <div class="profileEditHeader">
+    <div class="profileHeader">
       Physical Attributes
     </div>
       <div class="col-md-6">
@@ -112,7 +108,7 @@
     
 
     <div class="row">
-      <div class="profileEditHeader">
+      <div class="profileHeader">
       Character Tags
       </div>
       <div class="col-md-6">
